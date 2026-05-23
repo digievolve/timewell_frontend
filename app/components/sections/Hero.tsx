@@ -25,7 +25,6 @@ export default function Hero({
 }: HeroProps) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-br from-slate-50 via-primary-50/40 to-secondary-50/30 min-h-[90vh] flex items-center">
-      {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
         <div className="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-primary-100/50 blur-3xl" />
         <div className="absolute bottom-0 -left-24 w-80 h-80 rounded-full bg-secondary-100/40 blur-3xl" />
