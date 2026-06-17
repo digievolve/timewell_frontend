@@ -55,3 +55,77 @@ body {
   color: var(--foreground);
   background: var(--background);
 }
+
+/* ─── Animation keyframes ─────────────────────────────────────────── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── Static animation classes (hero / above-fold) ───────────────── */
+.animate-fade-up {
+  animation: fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.animate-fade-in {
+  animation: fade-in 0.6s ease both;
+}
+.delay-200 { animation-delay: 200ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* ─── Scroll-reveal: hidden base state ───────────────────────────── */
+.reveal {
+  opacity: 0;
+  will-change: opacity, transform;
+}
+.reveal.revealed {
+  opacity: 1;
+}
+
+/* up */
+.reveal[data-dir="up"] {
+  transform: translateY(28px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal[data-dir="up"].revealed { transform: translateY(0); }
+
+/* left */
+.reveal[data-dir="left"] {
+  transform: translateX(-28px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal[data-dir="left"].revealed { transform: translateX(0); }
+
+/* right */
+.reveal[data-dir="right"] {
+  transform: translateX(28px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal[data-dir="right"].revealed { transform: translateX(0); }
+
+/* scale */
+.reveal[data-dir="scale"] {
+  transform: scale(0.96);
+  transition: opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.reveal[data-dir="scale"].revealed { transform: scale(1); }
+
+/* fade only */
+.reveal[data-dir="none"] { transition: opacity 0.6s ease; }
+
+/* ─── Stagger delays ──────────────────────────────────────────────── */
+.reveal[data-delay="100"]  { transition-delay: 100ms; }
+.reveal[data-delay="150"]  { transition-delay: 150ms; }
+.reveal[data-delay="200"]  { transition-delay: 200ms; }
+.reveal[data-delay="250"]  { transition-delay: 250ms; }
+.reveal[data-delay="300"]  { transition-delay: 300ms; }
+.reveal[data-delay="350"]  { transition-delay: 350ms; }
+.reveal[data-delay="400"]  { transition-delay: 400ms; }
+.reveal[data-delay="500"]  { transition-delay: 500ms; }

@@ -1,4 +1,5 @@
 import TestimonialCard from "../cards/TestimonialCard";
+import AnimateIn from "../ui/AnimateIn";
 
 const testimonials = [
   {
@@ -21,11 +22,13 @@ const testimonials = [
   },
 ];
 
+const staggerDelays = [0, 150, 300] as const;
+
 export default function TestimonialsSection() {
   return (
     <section className="py-20 lg:py-28 bg-gradient-to-br from-primary-900 via-slate-900 to-slate-900" aria-labelledby="testimonials-heading">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
+        <AnimateIn direction="up" className="text-center mb-14">
           <span className="inline-block px-3 py-1 rounded-full bg-primary-800 text-primary-300 text-xs font-semibold uppercase tracking-wider mb-4">
             Testimonials
           </span>
@@ -35,10 +38,12 @@ export default function TestimonialsSection() {
           <p className="text-slate-400 max-w-xl mx-auto">
             The trust of families and the wellbeing of those we support is at the heart of everything we do.
           </p>
-        </div>
+        </AnimateIn>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
-            <TestimonialCard key={t.name} {...t} />
+          {testimonials.map((t, i) => (
+            <AnimateIn key={t.name} direction="up" delay={staggerDelays[i]}>
+              <TestimonialCard {...t} />
+            </AnimateIn>
           ))}
         </div>
       </div>

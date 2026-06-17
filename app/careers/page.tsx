@@ -5,24 +5,26 @@ import Input from "../components/ui/Input";
 import Textarea from "../components/ui/Textarea";
 import Select from "../components/ui/Select";
 import Button from "../components/ui/Button";
-import { CheckCircle, DollarSign, Clock, TrendingUp, Users, Heart, Star } from "lucide-react";
+import { CheckCircle, DollarSign, Clock, TrendingUp, Users, Heart, Star, ArrowRight, Send } from "lucide-react";
 import { validateCareerForm } from "@/utils/validation";
 import { siteConfig } from "@/config/site";
+import HeroSection from "../components/ui/HeroSection";
+import AnimateIn from "../components/ui/AnimateIn";
 
 const roles = [
-  { label: "Support Worker",       value: "support-worker" },
-  { label: "Care Assistant",       value: "care-assistant" },
-  { label: "Senior Support Worker",value: "senior-support-worker" },
-  { label: "Live-in Carer",        value: "live-in-carer" },
+  { label: "Support Worker",        value: "support-worker" },
+  { label: "Care Assistant",        value: "care-assistant" },
+  { label: "Senior Support Worker", value: "senior-support-worker" },
+  { label: "Live-in Carer",         value: "live-in-carer" },
 ];
 
 const benefits = [
-  { Icon: DollarSign,   title: "Competitive Pay",           desc: "Fair, competitive compensation that reflects your skills and experience." },
-  { Icon: Clock,        title: "Flexible Working Hours",    desc: "We work around your schedule with flexible shift patterns." },
-  { Icon: TrendingUp,   title: "Training & Development",    desc: "Comprehensive training and ongoing career development opportunities." },
-  { Icon: Users,        title: "Proper Staff Induction",    desc: "Thorough onboarding to ensure you're supported from day one." },
-  { Icon: Heart,        title: "Supportive Management",     desc: "A management team that genuinely cares about your wellbeing." },
-  { Icon: Star,         title: "Make a Real Difference",    desc: "Work that truly matters, improving lives every single day." },
+  { Icon: DollarSign,  title: "Competitive Pay",         desc: "Fair compensation that reflects your skills, experience, and dedication." },
+  { Icon: Clock,       title: "Flexible Working Hours",  desc: "We build rotas around your life, not the other way around." },
+  { Icon: TrendingUp,  title: "Training & Development",  desc: "Comprehensive induction, ongoing CPD, and real career progression." },
+  { Icon: Users,       title: "Proper Staff Induction",  desc: "Thorough onboarding so you're fully supported from day one." },
+  { Icon: Heart,       title: "Supportive Management",   desc: "Leaders who genuinely care about your wellbeing, not just outcomes." },
+  { Icon: Star,        title: "Make a Real Difference",  desc: "Work that truly matters — improving someone's life every single day." },
 ];
 
 export default function CareersPage() {
@@ -55,17 +57,26 @@ export default function CareersPage() {
     }
   }
 
+  /* ── Success state ──────────────────────────────────────────────── */
   if (status === "success") {
     return (
       <PageWrapper>
         <section className="min-h-[70vh] flex items-center justify-center py-20 bg-gradient-to-br from-slate-50 to-primary-50/30">
           <div className="max-w-md mx-auto px-4 text-center">
-            <div className="w-20 h-20 rounded-full bg-secondary-100 flex items-center justify-center mx-auto mb-6">
-              <CheckCircle className="w-10 h-10 text-secondary-600" />
-            </div>
-            <h1 className="font-display text-h2 font-bold text-slate-900 mb-4">Application Received!</h1>
-            <p className="text-slate-600 mb-8">{msg}</p>
-            <Button href="/">Return Home</Button>
+            <AnimateIn direction="scale">
+              <div className="w-24 h-24 rounded-full bg-secondary-100 flex items-center justify-center mx-auto mb-6 shadow-xl shadow-secondary-100">
+                <CheckCircle className="w-12 h-12 text-secondary-600" />
+              </div>
+            </AnimateIn>
+            <AnimateIn direction="up" delay={100}>
+              <h1 className="font-display text-4xl font-bold text-slate-900 mb-4">Application Received!</h1>
+            </AnimateIn>
+            <AnimateIn direction="up" delay={200}>
+              <p className="text-slate-600 mb-8">{msg}</p>
+            </AnimateIn>
+            <AnimateIn direction="up" delay={300}>
+              <Button href="/">Return Home</Button>
+            </AnimateIn>
           </div>
         </section>
       </PageWrapper>
@@ -74,103 +85,174 @@ export default function CareersPage() {
 
   return (
     <PageWrapper>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-slate-50 via-primary-50/40 to-secondary-50/30 py-20 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <span className="inline-block px-3 py-1 rounded-full bg-secondary-100 text-secondary-700 text-xs font-semibold uppercase tracking-wider mb-4">
-            Join Our Team
-          </span>
-          <h1 className="font-display text-h1 font-bold text-slate-900 mb-5">
-            Work With TimeWell Care Services
-          </h1>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto leading-relaxed">
-            We are always looking for compassionate and dedicated individuals to join our team. Become part of a supportive organization that values its staff and the people we support.
-          </p>
-        </div>
-      </section>
+      <HeroSection
+        badge="Join Our Team"
+        title="Work With TimeWell Care Services"
+        description="We are always looking for compassionate and dedicated individuals to join our team. Become part of a supportive organisation that truly values its people."
+        backgroundImage="/images/career.png"
+        waveColor="#0a0f1a"
+      />
 
-      {/* Why Join */}
-      <section className="py-20 lg:py-28 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
-            <h2 className="font-display text-h2 font-bold text-slate-900 mb-4">Why Join Our Team?</h2>
-            <p className="text-slate-600 max-w-xl mx-auto">
-              Working with TimeWell Care Services means becoming part of a supportive organization where every team member is valued.
-            </p>
-          </div>
+      {/* ── Why Join — DARK section ──────────────────────────────────────
+          slate-950 background, glass benefit cards                     */}
+      <section
+        className="relative py-24 lg:py-32 overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #0a0f1a 0%, #0a2229 50%, #0a0f1a 100%)" }}
+      >
+        {/* Glow blobs */}
+        <div
+          className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full opacity-15 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #38AADD 0%, transparent 70%)", transform: "translate(-30%, -30%)" }}
+        />
+        <div
+          className="absolute bottom-0 right-0 w-[400px] h-[400px] rounded-full opacity-10 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #8DC64C 0%, transparent 70%)", transform: "translate(25%, 25%)" }}
+        />
+        {/* Grid lines */}
+        <div
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
+          style={{
+            backgroundImage: "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+            backgroundSize: "72px 72px",
+          }}
+        />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimateIn direction="up">
+            <div className="text-center mb-16">
+              <span className="inline-block px-3 py-1 rounded-full bg-primary-500/15 border border-primary-500/25 text-primary-300 text-xs font-semibold uppercase tracking-wider mb-4">
+                Why Join Us
+              </span>
+              <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4">
+                A Place Where You<br />
+                <span className="text-primary-400">Truly Belong</span>
+              </h2>
+              <p className="text-slate-400 max-w-lg mx-auto text-sm">
+                Working with TimeWell means joining a supportive team where every member is valued, heard, and developed.
+              </p>
+            </div>
+          </AnimateIn>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {benefits.map(({ Icon, title, desc }) => (
-              <div key={title} className="p-6 rounded-3xl bg-slate-50 border border-slate-100 hover:border-primary-200 hover:bg-white transition-all duration-200 group">
-                <div className="w-11 h-11 rounded-xl bg-primary-100 group-hover:bg-primary-500 flex items-center justify-center mb-4 transition-colors">
-                  <Icon className="w-5 h-5 text-primary-600 group-hover:text-white transition-colors" strokeWidth={2} />
+            {benefits.map(({ Icon, title, desc }, index) => (
+              <AnimateIn
+                key={title}
+                direction="up"
+                delay={([0, 100, 200, 0, 100, 200] as const)[index]}
+              >
+                <div className="group bg-white/5 hover:bg-white border border-white/8 hover:border-slate-100 rounded-3xl p-7 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
+                  <div className="w-12 h-12 rounded-2xl bg-primary-500/20 group-hover:bg-primary-500 flex items-center justify-center mb-4 transition-colors duration-300">
+                    <Icon className="w-5 h-5 text-primary-300 group-hover:text-white transition-colors duration-300" strokeWidth={2} />
+                  </div>
+                  <h3 className="font-semibold text-white group-hover:text-slate-900 mb-2 transition-colors duration-300">{title}</h3>
+                  <p className="text-slate-400 group-hover:text-slate-500 text-sm leading-relaxed transition-colors duration-300">{desc}</p>
+                  <div className="mt-5 h-0.5 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
-                <h3 className="font-semibold text-slate-800 mb-2">{title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
-              </div>
+              </AnimateIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Available Roles + Apply Form */}
-      <section className="py-20 lg:py-28 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* ── Roles + Apply form ──────────────────────────────────────────── */}
+      <section className="py-24 lg:py-32 bg-slate-50 relative overflow-hidden">
+        {/* Subtle bg glow */}
+        <div
+          className="absolute bottom-0 left-0 w-[500px] h-[400px] rounded-full opacity-20 pointer-events-none"
+          style={{ background: "radial-gradient(circle, #d4eefb 0%, transparent 70%)", transform: "translate(-20%, 20%)" }}
+        />
+
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
-            {/* Roles sidebar */}
+
+            {/* ── Roles sidebar ──────────────────────────────────────── */}
             <div className="lg:col-span-2">
-              <h2 className="font-display text-h3 font-bold text-slate-900 mb-6">Available Roles</h2>
-              <div className="space-y-3 mb-10">
-                {roles.map((r) => (
-                  <div key={r.value} className="flex items-center gap-3 p-4 bg-white rounded-2xl border border-slate-100 shadow-card">
-                    <span className="w-2.5 h-2.5 rounded-full bg-secondary-500 shrink-0" aria-hidden="true" />
-                    <span className="text-slate-700 font-medium">{r.label}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                If you are passionate about caring for others, we would love to hear from you. You can also send your CV directly to{" "}
-                <a href={`mailto:${siteConfig.contact.email}`} className="text-primary-600 hover:underline font-medium">
-                  {siteConfig.contact.email}
-                </a>
-              </p>
+              <AnimateIn direction="left">
+                {/* Heading */}
+                <span className="inline-block px-3 py-1 rounded-full bg-primary-100 text-primary-700 text-xs font-semibold uppercase tracking-wider mb-4">
+                  Open Positions
+                </span>
+                <h2 className="font-display text-3xl font-bold text-slate-900 mb-6">Available Roles</h2>
+
+                {/* Role cards with gradient left border */}
+                <div className="space-y-3 mb-8">
+                  {roles.map((r, index) => (
+                    <div
+                      key={r.value}
+                      className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
+                    >
+                      <div className="w-1 h-8 rounded-full bg-gradient-to-b from-primary-400 to-secondary-400 shrink-0" />
+                      <span className="text-slate-700 font-medium text-sm group-hover:text-primary-700 transition-colors">{r.label}</span>
+                      <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-primary-400 ml-auto transition-colors" />
+                    </div>
+                  ))}
+                </div>
+
+                {/* CV direct send info */}
+                <div className="p-5 bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl text-white">
+                  <p className="font-semibold text-sm mb-2">Send your CV directly</p>
+                  <p className="text-white/70 text-xs leading-relaxed mb-3">
+                    Passionate about care but don't see your role listed? We'd still love to hear from you.
+                  </p>
+                  <a
+                    href={`mailto:${siteConfig.contact.email}`}
+                    className="inline-flex items-center gap-2 text-xs font-semibold text-white/90 hover:text-white transition-colors"
+                  >
+                    <Send className="w-3 h-3" />
+                    {siteConfig.contact.email}
+                  </a>
+                </div>
+              </AnimateIn>
             </div>
 
-            {/* Apply form */}
+            {/* ── Apply form ──────────────────────────────────────────── */}
             <div className="lg:col-span-3">
-              <form onSubmit={handleSubmit} noValidate className="bg-white rounded-3xl p-8 lg:p-10 shadow-card border border-slate-100 space-y-5">
-                <h2 className="font-display font-semibold text-2xl text-slate-900 mb-1">Apply Today</h2>
-                <p className="text-slate-500 text-sm mb-4">Fill in your details and we'll be in touch.</p>
+              <AnimateIn direction="right">
+                <div className="bg-white rounded-3xl p-8 lg:p-10 shadow-xl shadow-slate-200/60 border border-slate-100">
+                  {/* Form header */}
+                  <div className="mb-8 pb-6 border-b border-slate-100">
+                    <div className="flex items-center gap-3 mb-2">
+                      <div className="w-8 h-8 rounded-lg bg-secondary-500 flex items-center justify-center">
+                        <Star className="w-4 h-4 text-white" strokeWidth={2} />
+                      </div>
+                      <h2 className="font-display font-semibold text-xl text-slate-900">Apply Today</h2>
+                    </div>
+                    <p className="text-slate-500 text-sm ml-11">Fill in your details and we'll be in touch.</p>
+                  </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                  <Input label="Full Name" value={form.name} onChange={set("name")} error={errors.name} placeholder="Your name" required />
-                  <Input label="Phone Number" type="tel" value={form.phone} onChange={set("phone")} error={errors.phone} placeholder="+44 ..." required />
+                  <form onSubmit={handleSubmit} noValidate className="space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      <Input label="Full Name"    value={form.name}  onChange={set("name")}  error={errors.name}  placeholder="Your name"  required />
+                      <Input label="Phone Number" type="tel" value={form.phone} onChange={set("phone")} error={errors.phone} placeholder="+44 ..." required />
+                    </div>
+                    <Input label="Email Address" type="email" value={form.email} onChange={set("email")} error={errors.email} placeholder="you@example.com" required />
+                    <Select
+                      label="Role Applying For"
+                      options={roles}
+                      value={form.role}
+                      onChange={set("role")}
+                      error={errors.role}
+                      placeholder="Select a role…"
+                      required
+                    />
+                    <Textarea
+                      label="Tell us about yourself / Cover letter"
+                      value={form.message}
+                      onChange={set("message")}
+                      placeholder="Tell us about your experience, why you want to join us, and what makes you a great carer…"
+                      rows={5}
+                    />
+
+                    {status === "error" && (
+                      <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{msg}</p>
+                    )}
+
+                    <Button type="submit" disabled={status === "loading"} size="lg" className="w-full justify-center">
+                      {status === "loading" ? "Submitting…" : <>Submit Application <ArrowRight className="w-4 h-4" /></>}
+                    </Button>
+                  </form>
                 </div>
-                <Input label="Email Address" type="email" value={form.email} onChange={set("email")} error={errors.email} placeholder="you@example.com" required />
-                <Select
-                  label="Role Applying For"
-                  options={roles}
-                  value={form.role}
-                  onChange={set("role")}
-                  error={errors.role}
-                  placeholder="Select a role..."
-                  required
-                />
-                <Textarea
-                  label="Tell us about yourself / Cover letter"
-                  value={form.message}
-                  onChange={set("message")}
-                  placeholder="Tell us about your experience, why you want to join us, and what makes you a great carer..."
-                  rows={5}
-                />
-
-                {status === "error" && (
-                  <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{msg}</p>
-                )}
-
-                <Button type="submit" disabled={status === "loading"} size="lg" className="w-full justify-center">
-                  {status === "loading" ? "Submitting..." : "Submit Application"}
-                </Button>
-              </form>
+              </AnimateIn>
             </div>
           </div>
         </div>
