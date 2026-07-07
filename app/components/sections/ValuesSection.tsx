@@ -10,38 +10,51 @@ interface ValueItem {
   Icon: LucideIcon;
   title: string;
   description: string;
+  color: string;
 }
 
 const values: ValueItem[] = [
   {
     Icon: Heart,
     title: "Person-Centred Care",
-    description: "Every care plan is shaped entirely around the individual's needs, preferences, and lifestyle.",
+    description:
+      "Every care plan is shaped entirely around the individual's needs, preferences, and lifestyle.",
+    color: "#E76F51",
   },
   {
     Icon: Users,
     title: "Compassionate Staff",
-    description: "Carefully recruited professionals who are passionate about delivering outstanding, empathetic care.",
+    description:
+      "Carefully recruited professionals who are passionate about delivering outstanding, empathetic care.",
+    color: "#8B7CB6",
   },
   {
     Icon: Check,
     title: "Promotes Independence",
-    description: "We empower individuals to live fulfilling lives while receiving only the support they truly need.",
+    description:
+      "We empower individuals to live fulfilling lives while receiving only the support they truly need.",
+    color: "#2A9D8F",
   },
   {
     Icon: Clock,
     title: "Flexible & Reliable",
-    description: "Adaptable care packages that shift with changing needs — always there when you need us most.",
+    description:
+      "Adaptable care packages that shift with changing needs — always there when you need us most.",
+    color: "#4D96FF",
   },
   {
     Icon: Shield,
     title: "Safe & Professional",
-    description: "Strict safeguarding standards and best practices that ensure your loved one is always protected.",
+    description:
+      "Strict safeguarding standards and best practices that ensure your loved one is always protected.",
+    color: "#43AA8B",
   },
   {
     Icon: Award,
     title: "Committed to Excellence",
-    description: "Continuously improving through training, feedback, and a relentless drive for quality.",
+    description:
+      "Continuously improving through training, feedback, and a relentless drive for quality.",
+    color: "#F4A261",
   },
 ];
 
@@ -55,14 +68,14 @@ export default function ValuesSection() {
       {/* Subtle decorative elements */}
       <div
         className="absolute -right-32 -top-32 w-[500px] h-[500px] rounded-full"
-        style={{ 
-          background: "radial-gradient(circle, rgba(56, 170, 221, 0.06) 0%, transparent 70%)" 
+        style={{
+          background: "radial-gradient(circle, rgba(56, 170, 221, 0.06) 0%, transparent 70%)"
         }}
       />
       <div
         className="absolute -left-32 bottom-0 w-[400px] h-[400px] rounded-full"
-        style={{ 
-          background: "radial-gradient(circle, rgba(141, 198, 76, 0.06) 0%, transparent 70%)" 
+        style={{
+          background: "radial-gradient(circle, rgba(141, 198, 76, 0.06) 0%, transparent 70%)"
         }}
       />
 
@@ -75,7 +88,7 @@ export default function ValuesSection() {
               Why Choose Us
             </span>
           </div>
-          
+
           <h2
             id="values-heading"
             className="font-bold text-4xl lg:text-5xl mb-6 leading-tight"
@@ -87,14 +100,14 @@ export default function ValuesSection() {
               Matters.
             </span>
           </h2>
-          
+
           <p className="text-lg leading-relaxed max-w-2xl mx-auto" style={{ color: "var(--muted)" }}>
             At TimeWell Care Services we are committed to delivering safe, reliable, and compassionate care that families can genuinely trust.
           </p>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-16">
+        <div className="grid grid-cols-3 hidden gap-4 max-w-2xl mx-auto mb-16">
           {[
             { number: "500+", label: "People Supported" },
             { number: "100%", label: "Vetted Carers" },
@@ -115,68 +128,55 @@ export default function ValuesSection() {
         </div>
 
         {/* Values Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {values.map(({ Icon, title, description }) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {values.map(({ Icon, title, description, color }) => (
             <div
               key={title}
-              className="group bg-white rounded-2xl p-8 border border-[var(--border)] shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              className="relative pt-8 group"
             >
-              {/* Icon */}
-              <div 
-                className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-colors duration-300 group-hover:bg-opacity-20"
-                style={{ 
-                  background: "rgba(56, 170, 221, 0.08)",
-                  color: "var(--primary)"
-                }}
+              {/* Floating Icon */}
+              <div
+                className="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+                style={{ backgroundColor: color }}
               >
-                <Icon className="w-7 h-7" strokeWidth={1.75} />
+                <Icon
+                  className="w-7 h-7 text-white"
+                  strokeWidth={2}
+                />
               </div>
 
-              {/* Content */}
-              <h3 
-                className="font-bold text-xl mb-3 transition-colors duration-300"
-                style={{ color: "var(--foreground)" }}
-              >
-                {title}
-              </h3>
-              <p className="leading-relaxed" style={{ color: "var(--muted)" }}>
-                {description}
-              </p>
+              {/* Card */}
+              <div className="bg-white rounded-[28px] px-8 pt-14 pb-8 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                <h3
+                  className="text-3xl font-bold mb-4"
+                  style={{ color }}
+                >
+                  {title}
+                </h3>
 
-              {/* Decorative line */}
-              <div 
-                className="mt-5 h-0.5 rounded-full transition-all duration-300 opacity-0 group-hover:opacity-100"
-                style={{ 
-                  background: "linear-gradient(to right, var(--primary), var(--secondary))",
-                  width: "0%",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.width = "100%";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.width = "0%";
-                }}
-              />
+                <p className="text-gray-500 leading-relaxed mb-8">
+                  {description}
+                </p>
+              </div>
             </div>
           ))}
         </div>
 
         {/* Bottom CTA */}
         <div className="mt-16 lg:mt-20">
-          <div 
+          <div
             className="relative rounded-3xl p-8 lg:p-10 overflow-hidden border border-[var(--border)] bg-white shadow-sm"
           >
             {/* Subtle gradient accent */}
-            <div 
+            <div
               className="absolute top-0 right-0 w-64 h-64 rounded-full opacity-20"
-              style={{ 
-                background: "radial-gradient(circle, var(--primary) 0%, transparent 70%)" 
+              style={{
+                background: "radial-gradient(circle, var(--primary) 0%, transparent 70%)"
               }}
             />
-            
             <div className="relative flex flex-col lg:flex-row items-center justify-between gap-6">
               <div className="flex items-start lg:items-center gap-4">
-                <div 
+                <div
                   className="w-10 h-10 rounded-full flex items-center justify-center shrink-0"
                   style={{ background: "rgba(56, 170, 221, 0.08)" }}
                 >
@@ -201,15 +201,14 @@ export default function ValuesSection() {
                   </div>
                 </div>
               </div>
-              
               <Link
                 href="/about"
                 className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg whitespace-nowrap shadow-primary/20"
-                style={{ 
-                  boxShadow: "0 4px 14px rgba(56, 170, 221, 0.25)" 
+                style={{
+                  boxShadow: "0 4px 14px rgba(56, 170, 221, 0.25)"
                 }}
               >
-                Learn About Us 
+                Learn About Us
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
             </div>

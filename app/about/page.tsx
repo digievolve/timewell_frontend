@@ -8,12 +8,12 @@ import AnimateIn from "../components/ui/AnimateIn";
 export const metadata: Metadata = { title: "About Us" };
 
 const values = [
-  { Icon: Heart,     title: "Compassion",  description: "We treat every individual with kindness, empathy, and understanding." },
-  { Icon: Users,     title: "Respect",     description: "We honor the dignity, independence, and choices of every person we support." },
-  { Icon: Shield,    title: "Integrity",   description: "We deliver care with honesty, transparency, and accountability." },
-  { Icon: Award,     title: "Excellence",  description: "We continuously strive to improve the quality and standards of our care services." },
-  { Icon: Check,     title: "Commitment",  description: "We are dedicated to making a positive difference in the lives of those we support." },
-  { Icon: Lightbulb, title: "Innovation",  description: "We embrace best practices and new approaches to enhance the care we deliver." },
+  { Icon: Heart,     title: "Compassion",  color: "#E76F51", description: "We treat every individual with kindness, empathy, and understanding." },
+  { Icon: Users,     title: "Respect",     color: "#55ec0e", description: "We honor the dignity, independence, and choices of every person we support." },
+  { Icon: Shield,    title: "Integrity",   color: "#1bb4cf", description: "We deliver care with honesty, transparency, and accountability." },
+  { Icon: Award,     title: "Excellence",  color: "#bc00eb", description: "We continuously strive to improve the quality and standards of our care services." },
+  { Icon: Check,     title: "Commitment",  color: "#8ef00f", description: "We are dedicated to making a positive difference in the lives of those we support." },
+  { Icon: Lightbulb, title: "Innovation",  color: "#d82e04", description: "We embrace best practices and new approaches to enhance the care we deliver." },
 ];
 
 const commitments = [
@@ -27,7 +27,7 @@ const commitments = [
 const leadership = [
   {
     name: "Maureen Ifeyinwa Emenike",
-    title: "Executive Director",
+    title: "Director",
     image: "/images/dir1.png",
     bio: "Maureen oversees the strategic and operational direction of the organisation, ensuring that every service delivered reflects the highest standards of care and professional excellence.",
     initials: "ME",
@@ -126,7 +126,7 @@ export default function AboutPage() {
                   Founded With<br />
                   <span className="text-primary-500">Purpose</span>
                 </h2>
-                <div className="space-y-4 text-slate-600 leading-relaxed text-sm lg:text-base">
+                <div className="space-y-4 text-slate-600 leading-relaxed text-[16px] lg:text-base">
                   <p>
                     TimeWell Care Services was founded with a clear purpose: to provide compassionate, reliable, and person-centered care that families can truly trust. We recognise that every individual has unique needs, preferences, and life experiences, which is why we tailor our services to ensure the highest level of personalised care.
                   </p>
@@ -140,7 +140,7 @@ export default function AboutPage() {
 
                 <div className="mt-8 flex items-start gap-3 pl-5 border-l-4 border-primary-400 bg-primary-50/60 rounded-r-xl py-4 pr-5">
                   <Quote className="w-5 h-5 text-primary-400 shrink-0 mt-0.5 fill-primary-300" strokeWidth={0} />
-                  <p className="font-medium text-slate-700 italic text-sm leading-relaxed">
+                  <p className="font-medium text-slate-700 italic text-[16px] leading-relaxed">
                     Because at TimeWell Care Services, caring for people is not just our profession — it is our commitment.
                   </p>
                 </div>
@@ -151,7 +151,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="rounded-3xl overflow-hidden aspect-square shadow-2xl shadow-primary-200/40">
                   <Image
-                    src="/images/directors.png"
+                    src="/images/image10.png"
                     alt="Compassionate carer with elderly client"
                     fill
                     className="object-cover"
@@ -205,7 +205,7 @@ export default function AboutPage() {
               <h2 className="font-display text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
                 Meet Our <span className="text-primary-500">Leadership</span>
               </h2>
-              <p className="text-slate-500 max-w-lg mx-auto text-sm leading-relaxed">
+              <p className="text-slate-500 max-w-lg mx-auto text-[16px] leading-relaxed">
                 Our directors bring a wealth of experience, passion, and dedication to everything TimeWell Care Services delivers.
               </p>
             </div>
@@ -253,7 +253,7 @@ export default function AboutPage() {
                     </div>
 
                     {/* Bio */}
-                    <p className="text-slate-500 text-sm leading-relaxed">
+                    <p className="text-slate-500 text-[16px] leading-relaxed">
                       {bio}
                     </p>
 
@@ -275,7 +275,7 @@ export default function AboutPage() {
       <section className="relative py-20 lg:py-24 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=1400&q=80)" }}
+          style={{ backgroundImage: "url(/images/image7.png)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/92 to-primary-700/85" />
         <div
@@ -315,7 +315,7 @@ export default function AboutPage() {
                     <Icon className="w-6 h-6 text-white" strokeWidth={2} />
                   </div>
                   <h3 className="font-display font-semibold text-2xl text-white mb-3">{label}</h3>
-                  <p className="text-white/75 leading-relaxed text-sm">{text}</p>
+                  <p className="text-white/75 leading-relaxed text-[16px]">{text}</p>
                 </div>
               </AnimateIn>
             ))}
@@ -353,30 +353,46 @@ export default function AboutPage() {
               <h2 className="font-display text-4xl lg:text-5xl font-bold text-white mb-4">
                 Our Core Values
               </h2>
-              <p className="text-slate-400 max-w-xl mx-auto text-sm">
+              <p className="text-slate-400 max-w-xl mx-auto text-[16px]">
                 Our values guide every interaction, every decision, and every care plan we create.
               </p>
             </div>
           </AnimateIn>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {values.map(({ Icon, title, description }, index) => (
-              <AnimateIn
-                key={title}
-                direction="up"
-                delay={([0, 100, 200, 0, 100, 200] as const)[index]}
+      
+           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {values.map(({ Icon, title, description, color }) => (
+            <div
+              key={title}
+              className="relative pt-8 group"
+            >
+              {/* Floating Icon */}
+              <div
+                className="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+                style={{ backgroundColor: color }}
               >
-                <div className="group bg-white/5 hover:bg-white border border-white/8 hover:border-slate-100 rounded-3xl p-7 transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
-                  <div className="w-12 h-12 rounded-2xl bg-primary-500/20 group-hover:bg-primary-500 flex items-center justify-center mb-4 transition-colors duration-300">
-                    <Icon className="w-6 h-6 text-primary-300 group-hover:text-white transition-colors duration-300" strokeWidth={1.75} />
-                  </div>
-                  <h3 className="font-semibold text-white group-hover:text-slate-900 mb-2 transition-colors duration-300">{title}</h3>
-                  <p className="text-slate-400 group-hover:text-slate-500 text-sm leading-relaxed transition-colors duration-300">{description}</p>
-                  <div className="mt-5 h-0.5 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              </AnimateIn>
-            ))}
-          </div>
+                <Icon
+                  className="w-7 h-7 text-white"
+                  strokeWidth={2}
+                />
+              </div>
+
+              {/* Card */}
+              <div className="bg-white rounded-[28px] px-8 pt-14 pb-8 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                <h3
+                  className="text-3xl font-bold mb-4"
+                  style={{ color }}
+                >
+                  {title}
+                </h3>
+
+                <p className="text-gray-500 leading-relaxed mb-8">
+                  {description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
         </div>
       </section>
 
@@ -408,7 +424,7 @@ export default function AboutPage() {
                       className="flex items-start gap-3 p-4 rounded-xl bg-white/10 border border-white/20 hover:bg-white/15 transition-colors"
                     >
                       <Check className="w-5 h-5 text-secondary-300 shrink-0 mt-0.5" />
-                      <span className="text-white text-sm leading-relaxed">{commitment}</span>
+                      <span className="text-white text-[16px] leading-relaxed">{commitment}</span>
                     </li>
                   ))}
                 </ul>

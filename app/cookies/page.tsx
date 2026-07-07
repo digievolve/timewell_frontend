@@ -144,7 +144,7 @@ export default function CookiesPage() {
                   <div className={`w-10 h-10 rounded-xl ${iconBg} flex items-center justify-center mb-4`}>
                     <Icon className={`w-5 h-5 ${iconColor}`} strokeWidth={1.75} />
                   </div>
-                  <p className="font-semibold text-slate-800 text-sm mb-2">{title}</p>
+                  <p className="font-semibold text-slate-800 text-[16px] mb-2">{title}</p>
                   <p className="text-slate-500 text-xs leading-relaxed">{text}</p>
                 </div>
               ))}
@@ -155,7 +155,7 @@ export default function CookiesPage() {
           <AnimateIn direction="up">
             <div className="mb-10">
               <h2 className="font-display text-3xl font-bold text-slate-900 mb-3">How We Use Cookies</h2>
-              <p className="text-slate-600 text-sm leading-relaxed">
+              <p className="text-slate-600 text-[16px] leading-relaxed">
                 We use cookies to ensure our website functions correctly, remember your preferences, understand how visitors use the site, and continuously improve our online services.
               </p>
             </div>
@@ -193,7 +193,7 @@ export default function CookiesPage() {
 
                   {/* Card body */}
                   <div className="px-8 py-6">
-                    <p className="text-slate-600 text-sm leading-relaxed mb-5">{description}</p>
+                    <p className="text-slate-600 text-[16px] leading-relaxed mb-5">{description}</p>
                     <div>
                       <p className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">Examples</p>
                       <div className="flex flex-wrap gap-2">
@@ -235,7 +235,7 @@ export default function CookiesPage() {
                 <h2 className="font-display text-2xl font-bold text-slate-900">Managing Your Cookies</h2>
               </div>
 
-              <p className="text-slate-600 text-sm leading-relaxed mb-6">
+              <p className="text-slate-600 text-[16px] leading-relaxed mb-6">
                 You can control and manage cookies through your browser settings. Most browsers allow you to refuse new cookies, delete existing ones, or be notified when a new cookie is set. Please note that disabling certain cookies may affect the functionality of our website.
               </p>
 
@@ -249,7 +249,7 @@ export default function CookiesPage() {
                     rel="noopener noreferrer"
                     className="group flex items-center justify-between p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary-200 hover:bg-primary-50/40 transition-all duration-200"
                   >
-                    <span className="text-sm font-medium text-slate-700 group-hover:text-primary-700 transition-colors">{name}</span>
+                    <span className="text-[16px] font-medium text-slate-700 group-hover:text-primary-700 transition-colors">{name}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-slate-300 group-hover:text-primary-400 transition-colors" />
                   </a>
                 ))}
@@ -282,12 +282,12 @@ export default function CookiesPage() {
               <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-3xl p-7 text-white relative overflow-hidden">
                 <div className="absolute -top-6 -right-6 w-28 h-28 rounded-full border border-white/10 pointer-events-none" />
                 <h3 className="font-display font-semibold text-xl mb-3">Questions about cookies?</h3>
-                <p className="text-white/70 text-sm leading-relaxed mb-5">
+                <p className="text-white/70 text-[16px] leading-relaxed mb-5">
                   If you have any questions about how we use cookies, please contact us.
                 </p>
                 <a
                   href={`mailto:${siteConfig.contact.email}`}
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-white/90 hover:text-white transition-colors"
+                  className="inline-flex items-center gap-2 text-[16px] font-semibold text-white/90 hover:text-white transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   {siteConfig.contact.email}
@@ -301,13 +301,13 @@ export default function CookiesPage() {
                     <Shield className="w-5 h-5 text-secondary-600" strokeWidth={1.75} />
                   </div>
                   <h3 className="font-semibold text-slate-800 mb-2">Related Policies</h3>
-                  <p className="text-slate-500 text-sm leading-relaxed mb-5">
+                  <p className="text-slate-500 text-[16px] leading-relaxed mb-5">
                     Read our full Data Protection &amp; Privacy Policy for more information on how we protect your personal data.
                   </p>
                 </div>
                 <Link
                   href="/privacy"
-                  className="inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700 transition-colors"
+                  className="inline-flex items-center gap-2 text-[16px] font-semibold text-primary-600 hover:text-primary-700 transition-colors"
                 >
                   View Privacy Policy
                   <ExternalLink className="w-3.5 h-3.5" />

@@ -127,7 +127,7 @@ export default function CareersPage() {
                 A Place Where You<br />
                 <span className="text-primary-400">Truly Belong</span>
               </h2>
-              <p className="text-slate-400 max-w-lg mx-auto text-sm">
+              <p className="text-slate-400 max-w-lg mx-auto text-[16px]">
                 Working with TimeWell means joining a supportive team where every member is valued, heard, and developed.
               </p>
             </div>
@@ -145,7 +145,7 @@ export default function CareersPage() {
                     <Icon className="w-5 h-5 text-primary-300 group-hover:text-white transition-colors duration-300" strokeWidth={2} />
                   </div>
                   <h3 className="font-semibold text-white group-hover:text-slate-900 mb-2 transition-colors duration-300">{title}</h3>
-                  <p className="text-slate-400 group-hover:text-slate-500 text-sm leading-relaxed transition-colors duration-300">{desc}</p>
+                  <p className="text-slate-400 group-hover:text-slate-500 text-[16px] leading-relaxed transition-colors duration-300">{desc}</p>
                   <div className="mt-5 h-0.5 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </AnimateIn>
@@ -182,7 +182,7 @@ export default function CareersPage() {
                       className="flex items-center gap-4 p-4 bg-white rounded-2xl border border-slate-100 shadow-sm hover:shadow-md hover:border-primary-200 transition-all duration-200 group"
                     >
                       <div className="w-1 h-8 rounded-full bg-gradient-to-b from-primary-400 to-secondary-400 shrink-0" />
-                      <span className="text-slate-700 font-medium text-sm group-hover:text-primary-700 transition-colors">{r.label}</span>
+                      <span className="text-slate-700 font-medium text-[16px] group-hover:text-primary-700 transition-colors">{r.label}</span>
                       <ArrowRight className="w-4 h-4 text-slate-300 group-hover:text-primary-400 ml-auto transition-colors" />
                     </div>
                   ))}
@@ -190,7 +190,7 @@ export default function CareersPage() {
 
                 {/* CV direct send info */}
                 <div className="p-5 bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl text-white">
-                  <p className="font-semibold text-sm mb-2">Send your CV directly</p>
+                  <p className="font-semibold text-[16px] mb-2">Send your CV directly</p>
                   <p className="text-white/70 text-xs leading-relaxed mb-3">
                     Passionate about care but don't see your role listed? We'd still love to hear from you.
                   </p>
@@ -217,7 +217,7 @@ export default function CareersPage() {
                       </div>
                       <h2 className="font-display font-semibold text-xl text-slate-900">Apply Today</h2>
                     </div>
-                    <p className="text-slate-500 text-sm ml-11">Fill in your details and we'll be in touch.</p>
+                    <p className="text-slate-500 text-[16px] ml-11">Fill in your details and we'll be in touch.</p>
                   </div>
 
                   <form onSubmit={handleSubmit} noValidate className="space-y-5">
@@ -244,7 +244,7 @@ export default function CareersPage() {
                     />
 
                     {status === "error" && (
-                      <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{msg}</p>
+                      <p className="text-[16px] text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{msg}</p>
                     )}
 
                     <Button type="submit" disabled={status === "loading"} size="lg" className="w-full justify-center">

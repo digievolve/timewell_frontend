@@ -174,7 +174,7 @@ export default function PrivacyPage() {
                       <a
                         key={item.id}
                         href={`#${item.id}`}
-                        className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-sm text-slate-500 hover:text-primary-600 hover:bg-primary-50 transition-all duration-150 group"
+                        className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-[16px] text-slate-500 hover:text-primary-600 hover:bg-primary-50 transition-all duration-150 group"
                       >
                         <span className="w-1 h-1 rounded-full bg-slate-300 group-hover:bg-primary-400 transition-colors shrink-0" />
                         {item.label}
@@ -184,7 +184,7 @@ export default function PrivacyPage() {
 
                   {/* Quick contact box */}
                   <div className="mt-8 p-5 bg-gradient-to-br from-primary-600 to-primary-800 rounded-2xl text-white">
-                    <p className="font-semibold text-sm mb-2">Questions about your data?</p>
+                    <p className="font-semibold text-[16px] mb-2">Questions about your data?</p>
                     <p className="text-white/70 text-xs leading-relaxed mb-4">
                       Contact our team and we'll respond within 30 days.
                     </p>
@@ -212,7 +212,7 @@ export default function PrivacyPage() {
                     </div>
                     <h2 className="font-display text-2xl font-bold text-slate-900">Who We Are</h2>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-5">
+                  <p className="text-slate-600 text-[16px] leading-relaxed mb-5">
                     TimeWell Care Services is the <strong className="text-slate-800">data controller</strong> responsible for your personal data, as defined under the UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -227,9 +227,9 @@ export default function PrivacyPage() {
                           <p className="text-xs font-semibold text-slate-400 uppercase tracking-wider">{label}</p>
                         </div>
                         {href ? (
-                          <a href={href} className="text-sm text-slate-700 hover:text-primary-600 transition-colors break-all font-medium">{value}</a>
+                          <a href={href} className="text-[16px] text-slate-700 hover:text-primary-600 transition-colors break-all font-medium">{value}</a>
                         ) : (
-                          <p className="text-sm text-slate-700 font-medium">{value}</p>
+                          <p className="text-[16px] text-slate-700 font-medium">{value}</p>
                         )}
                       </div>
                     ))}
@@ -253,11 +253,11 @@ export default function PrivacyPage() {
                           <div className={`w-8 h-8 rounded-lg ${color.split(" ")[0]} flex items-center justify-center`}>
                             <Icon className={`w-4 h-4 ${color.split(" ")[1]}`} strokeWidth={2} />
                           </div>
-                          <p className="font-semibold text-slate-800 text-sm">{label}</p>
+                          <p className="font-semibold text-slate-800 text-[16px]">{label}</p>
                         </div>
                         <ul className="space-y-1.5">
                           {items.map((item) => (
-                            <li key={item} className="flex items-start gap-2.5 text-slate-600 text-sm">
+                            <li key={item} className="flex items-start gap-2.5 text-slate-600 text-[16px]">
                               <CheckCircle className="w-3.5 h-3.5 text-secondary-500 shrink-0 mt-0.5" strokeWidth={2.5} />
                               {item}
                             </li>
@@ -278,7 +278,7 @@ export default function PrivacyPage() {
                     </div>
                     <h2 className="font-display text-2xl font-bold text-slate-900">How We Use Your Information</h2>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-5">We use your personal data to:</p>
+                  <p className="text-slate-600 text-[16px] leading-relaxed mb-5">We use your personal data to:</p>
                   <ul className="space-y-2.5">
                     {[
                       "Assess and deliver care services tailored to individual needs",
@@ -288,7 +288,7 @@ export default function PrivacyPage() {
                       "Improve our services and respond to feedback",
                       "Handle complaints and safeguarding concerns",
                     ].map((item) => (
-                      <li key={item} className="flex items-start gap-3 text-slate-600 text-sm p-3 rounded-xl hover:bg-slate-50 transition-colors">
+                      <li key={item} className="flex items-start gap-3 text-slate-600 text-[16px] p-3 rounded-xl hover:bg-slate-50 transition-colors">
                         <CheckCircle className="w-4 h-4 text-primary-500 shrink-0 mt-0.5" strokeWidth={2.5} />
                         {item}
                       </li>
@@ -311,8 +311,8 @@ export default function PrivacyPage() {
                       <div key={title} className="flex gap-4 p-4 rounded-2xl bg-slate-50 border border-slate-100 hover:border-primary-100 transition-colors">
                         <div className="w-2 shrink-0 rounded-full bg-primary-600 mt-1" style={{ minHeight: "40px" }} />
                         <div>
-                          <p className="font-semibold text-slate-800 text-sm mb-1">{title}</p>
-                          <p className="text-slate-500 text-sm leading-relaxed">{desc}</p>
+                          <p className="font-semibold text-slate-800 text-[16px] mb-1">{title}</p>
+                          <p className="text-slate-500 text-[16px] leading-relaxed">{desc}</p>
                         </div>
                       </div>
                     ))}
@@ -334,14 +334,14 @@ export default function PrivacyPage() {
                     </div>
                     <h2 className="font-display text-2xl font-bold text-slate-900">How We Store &amp; Protect Your Data</h2>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-5">
+                  <p className="text-slate-600 text-[16px] leading-relaxed mb-5">
                     We take the security of your personal data seriously and implement appropriate technical and organisational measures to protect your information from unauthorised access, loss, or misuse.
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     {securityItems.map(({ icon, text }) => (
                       <div key={text} className="flex items-start gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100">
                         <span className="text-lg shrink-0 mt-0.5">{icon}</span>
-                        <p className="text-slate-600 text-sm leading-relaxed">{text}</p>
+                        <p className="text-slate-600 text-[16px] leading-relaxed">{text}</p>
                       </div>
                     ))}
                   </div>
@@ -357,7 +357,7 @@ export default function PrivacyPage() {
                     </div>
                     <h2 className="font-display text-2xl font-bold text-slate-900">How Long We Keep Your Data</h2>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-slate-600 text-[16px] leading-relaxed">
                     We retain personal data only for as long as necessary to fulfil the purposes for which it was collected, or as required by law. For care records, we follow guidance from the <strong className="text-slate-800">Care Quality Commission (CQC)</strong> and relevant health and social care regulations.
                   </p>
                 </div>
@@ -372,7 +372,7 @@ export default function PrivacyPage() {
                     </div>
                     <h2 className="font-display text-2xl font-bold text-slate-900">Sharing Your Information</h2>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-5">
+                  <p className="text-slate-600 text-[16px] leading-relaxed mb-5">
                     We may share your personal data with the following when necessary:
                   </p>
                   <ul className="space-y-2 mb-6">
@@ -382,7 +382,7 @@ export default function PrivacyPage() {
                       "Regulatory bodies such as the Care Quality Commission",
                       "Emergency services (where necessary)",
                     ].map((item) => (
-                      <li key={item} className="flex items-center gap-3 text-slate-600 text-sm p-3 rounded-xl bg-slate-50 border border-slate-100">
+                      <li key={item} className="flex items-center gap-3 text-slate-600 text-[16px] p-3 rounded-xl bg-slate-50 border border-slate-100">
                         <CheckCircle className="w-4 h-4 text-secondary-500 shrink-0" strokeWidth={2.5} />
                         {item}
                       </li>
@@ -390,7 +390,7 @@ export default function PrivacyPage() {
                   </ul>
                   <div className="p-4 rounded-2xl bg-secondary-50 border border-secondary-100 flex items-start gap-3">
                     <Shield className="w-5 h-5 text-secondary-600 shrink-0 mt-0.5" strokeWidth={2} />
-                    <p className="text-secondary-800 text-sm leading-relaxed">
+                    <p className="text-secondary-800 text-[16px] leading-relaxed">
                       <strong>We will never sell your personal data to third parties.</strong> Any sharing of information is done in accordance with data protection law and, where appropriate, with your consent.
                     </p>
                   </div>
@@ -406,7 +406,7 @@ export default function PrivacyPage() {
                     </div>
                     <h2 className="font-display text-2xl font-bold text-slate-900">Your Rights</h2>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed mb-6">
+                  <p className="text-slate-600 text-[16px] leading-relaxed mb-6">
                     Under UK data protection law, you have the following rights:
                   </p>
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-6">
@@ -415,13 +415,13 @@ export default function PrivacyPage() {
                         <div className="w-9 h-9 rounded-xl bg-white border border-slate-200 group-hover:bg-primary-500 group-hover:border-primary-500 flex items-center justify-center mb-3 transition-all duration-200">
                           <Icon className="w-4 h-4 text-slate-500 group-hover:text-white transition-colors duration-200" strokeWidth={2} />
                         </div>
-                        <p className="font-semibold text-slate-800 text-sm mb-1">{title}</p>
+                        <p className="font-semibold text-slate-800 text-[16px] mb-1">{title}</p>
                         <p className="text-slate-500 text-xs leading-relaxed">{description}</p>
                       </div>
                     ))}
                   </div>
                   <div className="p-5 rounded-2xl bg-gradient-to-br from-primary-600 to-primary-800 text-white">
-                    <p className="font-semibold text-sm mb-1">Exercise Your Rights</p>
+                    <p className="font-semibold text-[16px] mb-1">Exercise Your Rights</p>
                     <p className="text-white/75 text-xs leading-relaxed mb-3">
                       To exercise any of these rights, please contact us. We will respond within <strong className="text-white">30 days</strong>.
                     </p>
@@ -445,7 +445,7 @@ export default function PrivacyPage() {
                     </div>
                     <h2 className="font-display text-2xl font-bold text-slate-900">Changes to This Policy</h2>
                   </div>
-                  <p className="text-slate-600 text-sm leading-relaxed">
+                  <p className="text-slate-600 text-[16px] leading-relaxed">
                     We may update this policy from time to time to reflect changes in law, our practices, or our services. Any significant changes will be communicated where appropriate. The most current version will always be available on this page.
                   </p>
                   <p className="text-slate-400 text-xs mt-4">Last updated: May 2026</p>

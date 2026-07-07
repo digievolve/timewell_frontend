@@ -13,8 +13,8 @@ const services = [
 
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-300">
-      <div className="bg-primary-600 text-white">
+    <footer className="bg-slate-300 text-slate-300">
+      <div className="bg-primary-800 text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 py-3 text-sm">
             <div className="flex flex-wrap items-center justify-center sm:justify-start gap-x-6 gap-y-2">
@@ -56,14 +56,14 @@ export default function Footer() {
                 className="w-50 brihtness-75"
               />
             </Link>
-            <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
+            <p className="text-slate-700 text-sm leading-relaxed mb-6 max-w-xs">
               Compassionate, person-centred care delivered with dignity and respect. Supporting individuals to live safely, independently, and with confidence in their own homes.
             </p>
             {/* Social row */}
             <div className="flex items-center gap-2 mb-6">
-              <a href={siteConfig.socials.facebook} aria-label="Facebook" className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-200"><FaFacebook className="w-4 h-4" /></a>
-              <a href={siteConfig.socials.instagram} aria-label="Instagram" className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-200"><FaInstagram className="w-4 h-4" /></a>
-              <a href={siteConfig.socials.linkedin} aria-label="LinkedIn" className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-primary-600 flex items-center justify-center transition-colors duration-200"><FaLinkedin className="w-4 h-4" /></a>
+              <a href={siteConfig.socials.facebook} aria-label="Facebook" className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-primary-800 flex items-center justify-center transition-colors duration-200"><FaFacebook className="w-4 h-4" /></a>
+              <a href={siteConfig.socials.instagram} aria-label="Instagram" className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-primary-800 flex items-center justify-center transition-colors duration-200"><FaInstagram className="w-4 h-4" /></a>
+              <a href={siteConfig.socials.linkedin} aria-label="LinkedIn" className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-primary-800 flex items-center justify-center transition-colors duration-200"><FaLinkedin className="w-4 h-4" /></a>
               <a href={siteConfig.contact.whatsapp} aria-label="WhatsApp" target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-xl bg-slate-800 hover:bg-[#25D366] flex items-center justify-center transition-colors duration-200"><FaWhatsapp className="w-4 h-4" /></a>
             </div>
             {/* CQC badge */}
@@ -79,7 +79,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {siteConfig.nav.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="flex items-center gap-1.5 text-slate-400 hover:text-primary-400 text-sm transition-colors group">
+                  <Link href={item.href} className="flex items-center gap-1.5 text-slate-700 hover:text-primary-400 text-sm transition-colors group">
                     <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-150" />
                     {item.label}
                   </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="flex items-center gap-1.5 text-slate-400 hover:text-primary-400 text-sm transition-colors group">
+                  <Link href={s.href} className="flex items-center gap-1.5 text-slate-700 hover:text-primary-400 text-sm transition-colors group">
                     <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-150" />
                     {s.label}
                   </Link>
@@ -108,25 +108,25 @@ export default function Footer() {
             <h3 className="text-white font-semibold text-sm mb-5 uppercase tracking-wider">Contact Us</h3>
             <ul className="space-y-3 mb-8">
               <li>
-                <a href={`tel:${siteConfig.contact.phone}`} className="flex items-start gap-3 text-slate-400 hover:text-primary-400 text-sm transition-colors">
+                <a href={`tel:${siteConfig.contact.phone}`} className="flex items-start gap-3 text-slate-700 hover:text-primary-400 text-sm transition-colors">
                   <Phone className="w-4 h-4 mt-0.5 shrink-0 text-primary-500" />
                   {siteConfig.contact.phone}
                 </a>
               </li>
               <li>
-                <a href={`mailto:${siteConfig.contact.email}`} className="flex items-start gap-3 text-slate-400 hover:text-primary-400 text-sm transition-colors break-all">
+                <a href={`mailto:${siteConfig.contact.email}`} className="flex items-start gap-3 text-slate-700 hover:text-primary-400 text-sm transition-colors break-all">
                   <Mail className="w-4 h-4 mt-0.5 shrink-0 text-primary-500" />
                   {siteConfig.contact.email}
                 </a>
               </li>
               <li>
-                <span className="flex items-start gap-3 text-slate-400 text-sm">
+                <span className="flex items-start gap-3 text-slate-700 text-sm">
                   <MapPin className="w-4 h-4 mt-0.5 shrink-0 text-primary-500" />
                   {siteConfig.contact.address}
                 </span>
               </li>
               <li>
-                <span className="flex items-start gap-3 text-slate-400 text-sm">
+                <span className="flex items-start gap-3 text-slate-700 text-sm">
                   <Clock className="w-4 h-4 mt-0.5 shrink-0 text-primary-500" />
                   {siteConfig.contact.activeHours}
                 </span>
@@ -136,7 +136,7 @@ export default function Footer() {
             {/* Book CTA */}
             <Link
               href="/assessment"
-              className="inline-flex items-center gap-2 w-full justify-center px-5 py-3 bg-primary-600 hover:bg-primary-500 text-white text-sm font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-primary-900/30"
+              className="inline-flex items-center gap-2 w-full justify-center px-5 py-3 bg-primary-800 hover:bg-primary-500 text-white text-sm font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-primary-900/30"
             >
               Book a Free Assessment <ArrowRight className="w-4 h-4" />
             </Link>

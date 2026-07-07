@@ -66,9 +66,9 @@ export default function ContactPage() {
     <PageWrapper>
       <HeroSection
         badge="Get in Touch"
-        title="Work With TimeWell Care Services"
+        title="Contact TimeWell Care Services"
         description="We are here to answer your questions and discuss your care needs."
-        backgroundImage="/images/image6.png"
+        backgroundImage="/images/image7.png"
       />
 
       <section className="py-20 lg:py-28 bg-white">

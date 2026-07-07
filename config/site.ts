@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "TimeWell Care Services",
   tagline: "Compassionate Care You Can Trust",
-  logo: "/images/logo-nobg2.png",
+  logo: "/images/logo-nobg4.png",
   description:
     "TimeWell Care Services provides reliable, person-centered home care and supported living services in Haringey, London. Compassionate care that respects dignity, independence, and personal choices.",
   url: "https://timewellcareservices.co.uk",
@@ -13,8 +13,7 @@ export const siteConfig = {
     area: "London, United Kingdom",
     whatsapp: "https://wa.me/+447833891776",
     complaints: "/complaints",
-    activeHours: "24/7, 7 days a week"
-    ,
+    activeHours: "Office Hours: Business Days, 9AM–5PM | Care Available 24/7",
   },
   nav: [
     { label: "Home", href: "/" },

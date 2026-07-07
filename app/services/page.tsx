@@ -37,7 +37,7 @@ const services = [
     Icon: Building2,
     title: "Supported Living",
     tagline: "Independence with the right support",
-    imageUrl: "/images/image9.png",
+    imageUrl: "/images/image5.png",
     imageAlt: "Support worker with client in a supported living environment",
     description:
       "Providing tailored support for individuals with learning disabilities, autism, or mental health needs to live independently in a safe and supportive environment.",
@@ -100,7 +100,7 @@ export default function ServicesPage() {
         title="Our Care Services"
         badgeVariant="primary"
         description="TimeWell Care Services provides a wide range of care and support services tailored to meet the needs of individuals and families across London."
-        backgroundImage="/images/services.png"
+        backgroundImage="/images/services2.png"
         waveColor="#ffffff"
       />
 
@@ -137,7 +137,7 @@ export default function ServicesPage() {
                   </div>
 
                   {/* Tagline */}
-                  <p className="text-slate-400 text-sm font-medium uppercase tracking-widest mb-3">{tagline}</p>
+                  <p className="text-slate-400 text-[16px] font-medium uppercase tracking-widest mb-3">{tagline}</p>
 
                   {/* Heading */}
                   <h2 id={`${id}-heading`} className="font-display text-4xl lg:text-5xl font-bold text-slate-900 mb-5 leading-tight">
@@ -145,7 +145,7 @@ export default function ServicesPage() {
                   </h2>
 
                   {/* Description */}
-                  <p className="text-slate-600 leading-relaxed mb-8 text-sm lg:text-base">{description}</p>
+                  <p className="text-slate-600 leading-relaxed mb-8 text-[16px] lg:text-base">{description}</p>
 
                   {/* Features */}
                   <ul className="space-y-3 mb-8">
@@ -154,7 +154,7 @@ export default function ServicesPage() {
                         <span className="w-5 h-5 rounded-full bg-secondary-100 flex items-center justify-center shrink-0 mt-0.5">
                           <Check className="w-3 h-3 text-secondary-600" strokeWidth={3} />
                         </span>
-                        <span className="text-slate-700 text-sm">{f}</span>
+                        <span className="text-slate-700 text-[16px]">{f}</span>
                       </li>
                     ))}
                   </ul>
@@ -235,7 +235,7 @@ export default function ServicesPage() {
               <AnimateIn key={c} direction="up" delay={([0, 100, 200, 300] as const)[idx]}>
                 <div className="flex items-start gap-3 text-left bg-white/8 hover:bg-white/14 backdrop-blur-sm border border-white/10 rounded-2xl p-4 transition-colors duration-200">
                   <Check className="w-4 h-4 text-secondary-400 shrink-0 mt-0.5" strokeWidth={3} />
-                  <span className="text-white/85 text-sm">{c}</span>
+                  <span className="text-white/85 text-[16px]">{c}</span>
                 </div>
               </AnimateIn>
             ))}

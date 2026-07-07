@@ -13,7 +13,7 @@ const slides = [
     sub: "Person-centred home care that helps individuals live safely, comfortably and independently. With dignity at the heart of everything we do.",
     cta1: { label: "Free Assessment", href: "/assessment" },
     cta2: { label: "Our Services", href: "/services" },
-    image: "/images/image6.png",
+    image: "/images/image7.png",
     imageAlt: "Carer supporting an elderly person at home",
   },
   {
@@ -24,7 +24,7 @@ const slides = [
     sub: "We provide reliable, compassionate home care tailored to your loved one's unique needs. From personal care to medication support and companionship.",
     cta1: { label: "Get Started Today", href: "/assessment" },
     cta2: { label: "Learn More", href: "/services#home-care" },
-    image: "/images/image9.png",
+    image: "/images/image5.png",
     imageAlt: "Carer helping elderly person at home",
   },
   {
@@ -111,7 +111,7 @@ export default function HeroCarousel() {
             src={slide.image}
             alt={slide.imageAlt}
             fill
-            className="object-cover object-center"
+            className="object-cover object-top"
             priority={i === 0}
             sizes="100vw"
           />

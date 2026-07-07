@@ -90,10 +90,7 @@ export default function TestimonialsCarousel() {
         {/* Card */}
         <div className="relative">
           {/* Decorative quote mark */}
-          <Quote
-            className="absolute -top-4 left-8 w-16 h-16 text-primary-700 opacity-40 fill-primary-700"
-            strokeWidth={0}
-          />
+          
 
           {/* The animated card */}
           <div
@@ -103,6 +100,7 @@ export default function TestimonialsCarousel() {
               animation: `testimonialSlide${direction === "right" ? "In" : "InLeft"} 0.5s cubic-bezier(0.22,1,0.36,1) both`,
             }}
           >
+          
             {/* Stars */}
             <div className="flex justify-center gap-1 mb-6">
               {Array.from({ length: 5 }).map((_, i) => (

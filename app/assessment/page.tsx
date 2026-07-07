@@ -104,7 +104,7 @@ export default function AssessmentPage() {
         badge="Free Assessment"
         title="Request Your Care Assessment"
         description="Tell us about your care needs and a member of our friendly team will contact you to discuss how we can help."
-        backgroundImage="/images/image2.png"
+        backgroundImage="/images/image10.png"
         waveColor="#f8fafc"
       />
 
@@ -128,12 +128,12 @@ export default function AssessmentPage() {
                   <div className="absolute -top-6 -right-6 w-32 h-32 rounded-full border border-white/10 pointer-events-none" />
                   <div className="absolute -top-2 -right-2 w-16 h-16 rounded-full border border-white/10 pointer-events-none" />
                   <h2 className="font-display font-semibold text-xl mb-3">What to Expect</h2>
-                  <p className="text-white/75 text-sm leading-relaxed">
+                  <p className="text-white/75 text-[16px] leading-relaxed">
                     After submitting your form, a member of our team will contact you to discuss your care needs, answer questions, and help create a personalised care plan.
                   </p>
                   <div className="mt-5 pt-5 border-t border-white/15 flex items-center gap-3">
                     <Phone className="w-4 h-4 text-white/70 shrink-0" />
-                    <a href={`tel:${siteConfig.contact.phone}`} className="text-white/90 text-sm font-medium hover:text-white transition-colors">
+                    <a href={`tel:${siteConfig.contact.phone}`} className="text-white/90 text-[16px] font-medium hover:text-white transition-colors">
                       {siteConfig.contact.phone}
                     </a>
                   </div>
@@ -148,7 +148,7 @@ export default function AssessmentPage() {
                       <Icon className={`w-5 h-5 ${iconColor}`} strokeWidth={2} />
                     </div>
                     <div>
-                      <p className="font-semibold text-slate-800 text-sm mb-1">{title}</p>
+                      <p className="font-semibold text-slate-800 text-[16px] mb-1">{title}</p>
                       <p className="text-slate-500 text-xs leading-relaxed">{desc}</p>
                     </div>
                   </div>
@@ -168,7 +168,7 @@ export default function AssessmentPage() {
                       </div>
                       <h3 className="font-display font-semibold text-xl text-slate-900">Free Care Assessment</h3>
                     </div>
-                    <p className="text-slate-500 text-sm ml-11">
+                    <p className="text-slate-500 text-[16px] ml-11">
                       Complete this form and we'll be in touch within 1–2 business days.
                     </p>
                   </div>
@@ -247,7 +247,7 @@ export default function AssessmentPage() {
                     </div>
 
                     {status === "error" && (
-                      <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{message}</p>
+                      <p className="text-[16px] text-red-600 bg-red-50 border border-red-200 rounded-xl px-4 py-3">{message}</p>
                     )}
 
                     <Button type="submit" disabled={status === "loading"} size="lg" className="w-full justify-center">
