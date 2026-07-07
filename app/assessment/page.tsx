@@ -104,7 +104,7 @@ export default function AssessmentPage() {
         badge="Free Assessment"
         title="Request Your Care Assessment"
         description="Tell us about your care needs and a member of our friendly team will contact you to discuss how we can help."
-        backgroundImage="/images/image10.png"
+        backgroundImage="/images/image10.webp"
         waveColor="#f8fafc"
       />
 

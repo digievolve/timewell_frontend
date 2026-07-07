@@ -68,7 +68,7 @@ export default function ContactPage() {
         badge="Get in Touch"
         title="Contact TimeWell Care Services"
         description="We are here to answer your questions and discuss your care needs."
-        backgroundImage="/images/image7.png"
+        backgroundImage="/images/image7.webp"
       />
 
       <section className="py-20 lg:py-28 bg-white">

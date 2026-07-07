@@ -28,7 +28,7 @@ const leadership = [
   {
     name: "Maureen Ifeyinwa Emenike",
     title: "Director",
-    image: "/images/dir1.png",
+    image: "/images/dir1.webp",
     bio: "Maureen oversees the strategic and operational direction of the organisation, ensuring that every service delivered reflects the highest standards of care and professional excellence.",
     initials: "ME",
     accentFrom: "from-secondary-600",
@@ -37,7 +37,7 @@ const leadership = [
   {
     name: "Stella C. Ngozi Ede",
     title: "Director",
-    image: "/images/dir2.png",
+    image: "/images/dir2.webp",
     bio: "Stella brings extensive experience in health and social care leadership. Her vision and drive for compassionate, person-centred care are the foundation on which TimeWell Care Services was built.",
     initials: "SN",
     accentFrom: "from-primary-600",
@@ -54,7 +54,7 @@ export default function AboutPage() {
       <section className="relative overflow-hidden" style={{ minHeight: "500px" }}>
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
-          style={{ backgroundImage: "url(/images/image9.png)" }}
+          style={{ backgroundImage: "url(/images/image9.webp)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-primary-950/95 via-primary-900/80 to-primary-800/50" />
         <div className="absolute inset-0 bg-gradient-to-t from-primary-950/50 via-transparent to-transparent" />
@@ -151,7 +151,7 @@ export default function AboutPage() {
               <div className="relative">
                 <div className="rounded-3xl overflow-hidden aspect-square shadow-2xl shadow-primary-200/40">
                   <Image
-                    src="/images/image10.png"
+                    src="/images/image10.webp"
                     alt="Compassionate carer with elderly client"
                     fill
                     className="object-cover"
@@ -275,7 +275,7 @@ export default function AboutPage() {
       <section className="relative py-20 lg:py-24 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: "url(/images/image7.png)" }}
+          style={{ backgroundImage: "url(/images/image7.webp)" }}
         />
         <div className="absolute inset-0 bg-gradient-to-br from-primary-900/92 to-primary-700/85" />
         <div

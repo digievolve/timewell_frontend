@@ -89,7 +89,7 @@ export default function CareersPage() {
         badge="Join Our Team"
         title="Work With TimeWell Care Services"
         description="We are always looking for compassionate and dedicated individuals to join our team. Become part of a supportive organisation that truly values its people."
-        backgroundImage="/images/career.png"
+        backgroundImage="/images/career.webp"
         waveColor="#0a0f1a"
       />
 

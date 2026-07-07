@@ -15,7 +15,7 @@ const services = [
     Icon: Home,
     title: "Home Care",
     tagline: "Care in the place you love most",
-    imageUrl: "/images/image8.png",
+    imageUrl: "/images/image8.webp",
     imageAlt: "Carer helping elderly person at home",
     description:
       "Supporting individuals in their own homes with daily living activities such as personal care, meal preparation, medication support, and companionship.",
@@ -37,7 +37,7 @@ const services = [
     Icon: Building2,
     title: "Supported Living",
     tagline: "Independence with the right support",
-    imageUrl: "/images/image5.png",
+    imageUrl: "/images/image5.webp",
     imageAlt: "Support worker with client in a supported living environment",
     description:
       "Providing tailored support for individuals with learning disabilities, autism, or mental health needs to live independently in a safe and supportive environment.",
@@ -59,7 +59,7 @@ const services = [
     Icon: Coffee,
     title: "Companionship",
     tagline: "Warmth, connection, and presence",
-    imageUrl:  "/images/image5.png",
+    imageUrl:  "/images/image5.webp",
     imageAlt: "Companion carer sharing a moment with an elderly person",
     description:
       "Providing social support and companionship to reduce loneliness and improve emotional wellbeing, with meaningful connections that enrich daily life.",

@@ -13,7 +13,7 @@ const slides = [
     sub: "Person-centred home care that helps individuals live safely, comfortably and independently. With dignity at the heart of everything we do.",
     cta1: { label: "Free Assessment", href: "/assessment" },
     cta2: { label: "Our Services", href: "/services" },
-    image: "/images/image7.png",
+    image: "/images/image7.webp",
     imageAlt: "Carer supporting an elderly person at home",
   },
   {
@@ -24,7 +24,7 @@ const slides = [
     sub: "We provide reliable, compassionate home care tailored to your loved one's unique needs. From personal care to medication support and companionship.",
     cta1: { label: "Get Started Today", href: "/assessment" },
     cta2: { label: "Learn More", href: "/services#home-care" },
-    image: "/images/image5.png",
+    image: "/images/image5.webp",
     imageAlt: "Carer helping elderly person at home",
   },
   {
@@ -35,7 +35,7 @@ const slides = [
     sub: "Tailored, professional support for individuals with learning disabilities, autism, or mental health needs, empowering them to thrive in safe environments.",
     cta1: { label: "Book Assessment", href: "/assessment" },
     cta2: { label: "About Us", href: "/about" },
-    image: "/images/image4.png",
+    image: "/images/image4.webp",
     imageAlt: "Support worker with client",
   },
   {
@@ -46,7 +46,7 @@ const slides = [
     sub: "Meaningful companionship and social support that reduces isolation, improves emotional wellbeing, and brings joy to everyday life.",
     cta1: { label: "Request Care", href: "/assessment" },
     cta2: { label: "Contact Us", href: "/contact" },
-    image: "/images/image8.png",
+    image: "/images/image8.webp",
     imageAlt: "Companion carer with elderly person",
   },
 ];
