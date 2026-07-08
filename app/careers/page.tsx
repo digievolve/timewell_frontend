@@ -19,12 +19,12 @@ const roles = [
 ];
 
 const benefits = [
-  { Icon: DollarSign,  title: "Competitive Pay",         desc: "Fair compensation that reflects your skills, experience, and dedication." },
-  { Icon: Clock,       title: "Flexible Working Hours",  desc: "We build rotas around your life, not the other way around." },
-  { Icon: TrendingUp,  title: "Training & Development",  desc: "Comprehensive induction, ongoing CPD, and real career progression." },
-  { Icon: Users,       title: "Proper Staff Induction",  desc: "Thorough onboarding so you're fully supported from day one." },
-  { Icon: Heart,       title: "Supportive Management",   desc: "Leaders who genuinely care about your wellbeing, not just outcomes." },
-  { Icon: Star,        title: "Make a Real Difference",  desc: "Work that truly matters — improving someone's life every single day." },
+  { Icon: DollarSign,  title: "Competitive Pay",         color: "#E76F51", desc: "Fair compensation that reflects your skills, experience, and dedication." },
+  { Icon: Clock,       title: "Flexible Working Hours",  color: "#55ec0e", desc: "We build rotas around your life, not the other way around." },
+  { Icon: TrendingUp,  title: "Training & Development",  color: "#1bb4cf", desc: "Comprehensive induction, ongoing CPD, and real career progression." },
+  { Icon: Users,       title: "Proper Staff Induction",  color: "#bc00eb", desc: "Thorough onboarding so you're fully supported from day one." },
+  { Icon: Heart,       title: "Supportive Management",   color: "#8ef00f", desc: "Leaders who genuinely care about your wellbeing, not just outcomes." },
+  { Icon: Star,        title: "Make a Real Difference",  color: "#d82e04", desc: "Work that truly matters — improving someone's life every single day." },
 ];
 
 export default function CareersPage() {
@@ -134,22 +134,38 @@ export default function CareersPage() {
           </AnimateIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {benefits.map(({ Icon, title, desc }, index) => (
-              <AnimateIn
-                key={title}
-                direction="up"
-                delay={([0, 100, 200, 0, 100, 200] as const)[index]}
+           
+            {benefits.map(({ Icon, title, desc, color }) => (
+            <div
+              key={title}
+              className="relative pt-8 px-4 group"
+            >
+              {/* Floating Icon */}
+              <div
+                className="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+                style={{ backgroundColor: color }}
               >
-                <div className="group bg-white/5 hover:bg-white border border-white/8 hover:border-slate-100 rounded-3xl p-7 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 h-full">
-                  <div className="w-12 h-12 rounded-2xl bg-primary-500/20 group-hover:bg-primary-500 flex items-center justify-center mb-4 transition-colors duration-300">
-                    <Icon className="w-5 h-5 text-primary-300 group-hover:text-white transition-colors duration-300" strokeWidth={2} />
-                  </div>
-                  <h3 className="font-semibold text-white group-hover:text-slate-900 mb-2 transition-colors duration-300">{title}</h3>
-                  <p className="text-slate-400 group-hover:text-slate-500 text-[16px] leading-relaxed transition-colors duration-300">{desc}</p>
-                  <div className="mt-5 h-0.5 rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-              </AnimateIn>
-            ))}
+                <Icon
+                  className="w-7 h-7 text-white"
+                  strokeWidth={2}
+                />
+              </div>
+
+              {/* Card */}
+              <div className="bg-white rounded-[28px] px-8 pt-14 pb-8 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                <h3
+                  className="text-3xl font-bold mb-4"
+                  style={{ color }}
+                >
+                  {title}
+                </h3>
+
+                <p className="text-gray-500 leading-relaxed mb-8">
+                  {desc}
+                </p>
+              </div>
+            </div>
+          ))}
           </div>
         </div>
       </section>
