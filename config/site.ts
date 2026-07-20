@@ -6,7 +6,7 @@ export const siteConfig = {
     "TimeWell Care Services provides reliable, person-centered home care and supported living services in Haringey, London. Compassionate care that respects dignity, independence, and personal choices.",
   url: "https://timewellcareservices.co.uk",
   contact: {
-    phone: "+44 7466 926 857",
+    phone: "+44 7466 926 857, +44 7833 891 776",
     email: "info@timewellcareservices.co.uk",
     complain: "complain@timewellcareservices.co.uk",
     address: "Head Office: Haringey, London, United Kingdom",
