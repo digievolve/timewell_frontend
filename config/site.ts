@@ -2,6 +2,7 @@ export const siteConfig = {
   name: "TimeWell Care Services",
   tagline: "Compassionate Care You Can Trust",
   logo: "/images/logo-nobg4.png",
+  icon: "/images/favicon.ico",
   description:
     "TimeWell Care Services provides reliable, person-centered home care and supported living services in Haringey, London. Compassionate care that respects dignity, independence, and personal choices.",
   url: "https://timewellcareservices.co.uk",

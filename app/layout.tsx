@@ -113,7 +113,7 @@ export default function RootLayout({
               name: siteConfig.name,
               description: siteConfig.description,
               url: siteConfig.url,
-              logo: `${siteConfig.url}/images/logo-nobg4.png`,
+              logo: `${siteConfig.url}/images/favicon.ico`,
               contactPoint: {
                 "@type": "ContactPoint",
                 telephone: siteConfig.contact.phone,
