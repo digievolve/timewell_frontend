@@ -11,9 +11,9 @@ import HeroSection from "../components/ui/HeroSection";
 import AnimateIn from "../components/ui/AnimateIn";
 import { siteConfig } from "@/config/site";
 
-const whoOptions   = [{ label: "Myself", value: "myself" }, { label: "Family Member", value: "family" }, { label: "Friend", value: "friend" }];
-const careOptions  = [{ label: "Home Care", value: "home-care" }, { label: "Supported Living", value: "supported-living" }, { label: "Companionship", value: "companionship" }];
-const whenOptions  = [{ label: "Immediately", value: "immediately" }, { label: "Within 1–2 weeks", value: "1-2-weeks" }, { label: "Within 1 month", value: "1-month" }];
+const whoOptions = [{ label: "Myself", value: "myself" }, { label: "Family Member", value: "family" }, { label: "Friend", value: "friend" }];
+const careOptions = [{ label: "Home Care", value: "home-care" }, { label: "Supported Living", value: "supported-living" }, { label: "Companionship", value: "companionship" }];
+const whenOptions = [{ label: "Immediately", value: "immediately" }, { label: "Within 1–2 weeks", value: "1-2-weeks" }, { label: "Within 1 month", value: "1-month" }];
 
 const infoCards = [
   {
@@ -58,10 +58,22 @@ export default function AssessmentPage() {
     setErrors({});
     setStatus("loading");
     try {
-      const res = await fetch("/api/contact", {
+      // Updated to use the new email API with proper form type
+      const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "assessment", ...form }),
+        body: JSON.stringify({
+          formType: "careAssessment", // This maps to the correct recipient
+          formData: {
+            fullName: form.fullName,
+            phoneNumber: form.phone,
+            emailAddress: form.email,
+            whoNeedsCare: form.whoNeedsCare,
+            careType: form.typeOfCare,
+            whenNeeded: form.whenNeeded,
+            description: form.description
+          }
+        }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");

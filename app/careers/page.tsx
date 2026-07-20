@@ -12,30 +12,31 @@ import HeroSection from "../components/ui/HeroSection";
 import AnimateIn from "../components/ui/AnimateIn";
 
 const roles = [
-  { label: "Support Worker",        value: "support-worker" },
-  { label: "Care Assistant",        value: "care-assistant" },
+  { label: "Support Worker", value: "support-worker" },
+  { label: "Care Assistant", value: "care-assistant" },
   { label: "Senior Support Worker", value: "senior-support-worker" },
-  { label: "Live-in Carer",         value: "live-in-carer" },
+  { label: "Live-in Carer", value: "live-in-carer" },
 ];
 
 const benefits = [
-  { Icon: DollarSign,  title: "Competitive Pay",         color: "#E76F51", desc: "Fair compensation that reflects your skills, experience, and dedication." },
-  { Icon: Clock,       title: "Flexible Working Hours",  color: "#55ec0e", desc: "We build rotas around your life, not the other way around." },
-  { Icon: TrendingUp,  title: "Training & Development",  color: "#1bb4cf", desc: "Comprehensive induction, ongoing CPD, and real career progression." },
-  { Icon: Users,       title: "Proper Staff Induction",  color: "#bc00eb", desc: "Thorough onboarding so you're fully supported from day one." },
-  { Icon: Heart,       title: "Supportive Management",   color: "#8ef00f", desc: "Leaders who genuinely care about your wellbeing, not just outcomes." },
-  { Icon: Star,        title: "Make a Real Difference",  color: "#d82e04", desc: "Work that truly matters — improving someone's life every single day." },
+  { Icon: DollarSign, title: "Competitive Pay", color: "#E76F51", desc: "Fair compensation that reflects your skills, experience, and dedication." },
+  { Icon: Clock, title: "Flexible Working Hours", color: "#55ec0e", desc: "We build rotas around your life, not the other way around." },
+  { Icon: TrendingUp, title: "Training & Development", color: "#1bb4cf", desc: "Comprehensive induction, ongoing CPD, and real career progression." },
+  { Icon: Users, title: "Proper Staff Induction", color: "#bc00eb", desc: "Thorough onboarding so you're fully supported from day one." },
+  { Icon: Heart, title: "Supportive Management", color: "#8ef00f", desc: "Leaders who genuinely care about your wellbeing, not just outcomes." },
+  { Icon: Star, title: "Make a Real Difference", color: "#d82e04", desc: "Work that truly matters — improving someone's life every single day." },
 ];
 
 export default function CareersPage() {
   const [form, setForm] = useState({ name: "", email: "", phone: "", role: "", message: "" });
-  const [errors, setErrors]   = useState<Record<string, string>>({});
-  const [status, setStatus]   = useState<"idle" | "loading" | "success" | "error">("idle");
-  const [msg, setMsg]         = useState("");
+  const [errors, setErrors] = useState<Record<string, string>>({});
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [msg, setMsg] = useState("");
 
   const set = (k: string) => (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) =>
     setForm((f) => ({ ...f, [k]: e.target.value }));
 
+  // In the Careers page, update the handleSubmit function
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     const errs = validateCareerForm(form as Record<string, string>);
@@ -43,10 +44,19 @@ export default function CareersPage() {
     setErrors({});
     setStatus("loading");
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: "career", ...form }),
+        body: JSON.stringify({
+          formType: "jobApplication",
+          formData: {
+            fullName: form.name,
+            phoneNumber: form.phone,
+            emailAddress: form.email,
+            role: form.role,
+            coverLetter: form.message
+          }
+        }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
@@ -134,38 +144,38 @@ export default function CareersPage() {
           </AnimateIn>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-           
+
             {benefits.map(({ Icon, title, desc, color }) => (
-            <div
-              key={title}
-              className="relative pt-8 px-4 group"
-            >
-              {/* Floating Icon */}
               <div
-                className="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
-                style={{ backgroundColor: color }}
+                key={title}
+                className="relative pt-8 px-4 group"
               >
-                <Icon
-                  className="w-7 h-7 text-white"
-                  strokeWidth={2}
-                />
-              </div>
-
-              {/* Card */}
-              <div className="bg-white rounded-[28px] px-8 pt-14 pb-8 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
-                <h3
-                  className="text-3xl font-bold mb-4"
-                  style={{ color }}
+                {/* Floating Icon */}
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+                  style={{ backgroundColor: color }}
                 >
-                  {title}
-                </h3>
+                  <Icon
+                    className="w-7 h-7 text-white"
+                    strokeWidth={2}
+                  />
+                </div>
 
-                <p className="text-gray-500 leading-relaxed mb-8">
-                  {desc}
-                </p>
+                {/* Card */}
+                <div className="bg-white rounded-[28px] px-8 pt-14 pb-8 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                  <h3
+                    className="text-3xl font-bold mb-4"
+                    style={{ color }}
+                  >
+                    {title}
+                  </h3>
+
+                  <p className="text-gray-500 leading-relaxed mb-8">
+                    {desc}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
           </div>
         </div>
       </section>
@@ -238,7 +248,7 @@ export default function CareersPage() {
 
                   <form onSubmit={handleSubmit} noValidate className="space-y-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <Input label="Full Name"    value={form.name}  onChange={set("name")}  error={errors.name}  placeholder="Your name"  required />
+                      <Input label="Full Name" value={form.name} onChange={set("name")} error={errors.name} placeholder="Your name" required />
                       <Input label="Phone Number" type="tel" value={form.phone} onChange={set("phone")} error={errors.phone} placeholder="+44 ..." required />
                     </div>
                     <Input label="Email Address" type="email" value={form.email} onChange={set("email")} error={errors.email} placeholder="you@example.com" required />

@@ -44,10 +44,36 @@ export default function ContactPage() {
     setErrors({});
     setStatus("loading");
     try {
-      const res = await fetch("/api/contact", {
+      let emailFormType: "requestCare" | "complaint";
+      let formData: any;
+      
+      if (formType === "care") {
+        emailFormType = "requestCare";
+        formData = {
+          name: form.name,
+          phoneNumber: form.phone,
+          emailAddress: form.email,
+          careType: form.typeOfCare,
+          message: form.message
+        };
+      } else {
+        emailFormType = "complaint";
+        formData = {
+          name: form.name,
+          phoneNumber: form.phone,
+          emailAddress: form.email,
+          complaintType: form.typeOfCare,
+          complaintDetails: form.message
+        };
+      }
+
+      const res = await fetch("/api/send-email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ type: formType, ...form }),
+        body: JSON.stringify({
+          formType: emailFormType,
+          formData: formData
+        }),
       });
       if (!res.ok) throw new Error();
       setStatus("success");
