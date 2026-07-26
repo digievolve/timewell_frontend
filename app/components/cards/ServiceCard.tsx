@@ -18,7 +18,7 @@ export default function ServiceCard({ Icon, title, description, href = "/service
   const a = accentMap[accent];
 
   return (
-    <Link
+    <Link rel="canonical"
       href={href}
       className="group block bg-white rounded-3xl p-8 shadow-card hover:shadow-card-lg transition-all duration-300 hover:-translate-y-1 border border-slate-100/80"
     >

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import PageWrapper from "../components/layout";
-import { Heart, Eye, Lightbulb, Shield, Award, Users, Check, Quote } from "lucide-react";
+import { Heart, Eye, Lightbulb, Shield, Award, Users, Check, Quote, Sparkles } from "lucide-react";
 import Button from "../components/ui/Button";
 import AnimateIn from "../components/ui/AnimateIn";
 
@@ -393,6 +393,37 @@ export default function AboutPage() {
             </div>
           ))}
         </div>
+
+       {/* ── Empowerment Section ────────────────────────────────────────── */}
+{/* ── Empowerment Section ────────────────────────────────────────── */}
+<div className="mt-20 max-w-4xl mx-auto px-4 sm:px-0">
+  <AnimateIn direction="up" delay={100}>
+    <div className="relative bg-white/5 rounded-3xl p-6 sm:p-10 md:p-12 border border-white/10 shadow-xl shadow-primary-900/10">
+      {/* Decorative elements */}
+      <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+      <div className="absolute -bottom-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      
+      <div className="relative flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
+        {/* Quotation mark as visual element instead of icon */}
+        <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-primary-500/10 to-secondary-500/10 border border-white/5 flex items-center justify-center flex-shrink-0">
+          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-primary-300/70" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
+          </svg>
+        </div>
+        
+        <div className="flex-1 min-w-0">
+          <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 tracking-tight">
+            Empowerment
+          </h3>
+          <p className="text-white/70 leading-relaxed text-sm sm:text-base">
+            At TimeWell Care Services, we enable people to live as independently as possible by promoting choice, confidence, and dignity. By focusing on each person's strengths and aspirations, we help them live fulfilling lives with greater independence and inclusion.
+          </p>
+        </div>
+      </div>
+    </div>
+  </AnimateIn>
+</div>
+
         </div>
       </section>
 

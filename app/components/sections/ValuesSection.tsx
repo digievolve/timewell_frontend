@@ -201,7 +201,7 @@ export default function ValuesSection() {
                   </div>
                 </div>
               </div>
-              <Link
+              <Link rel="canonical"
                 href="/about"
                 className="inline-flex items-center gap-2 px-7 py-3 bg-[var(--primary)] hover:bg-[var(--primary-dark)] text-white font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg whitespace-nowrap shadow-primary/20"
                 style={{

@@ -305,7 +305,7 @@ export default function CookiesPage() {
                     Read our full Data Protection &amp; Privacy Policy for more information on how we protect your personal data.
                   </p>
                 </div>
-                <Link
+                <Link rel="canonical"
                   href="/privacy"
                   className="inline-flex items-center gap-2 text-[16px] font-semibold text-primary-600 hover:text-primary-700 transition-colors"
                 >

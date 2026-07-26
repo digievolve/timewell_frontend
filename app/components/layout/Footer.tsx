@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Brand — 4 cols */}
           <div className="lg:col-span-4">
-            <Link href="/" className="inline-block">
+            <Link rel="canonical" href="/" className="inline-block">
               <img
                 src={siteConfig.logo}
                 alt="TimeWell Care Services logo"
@@ -79,7 +79,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {siteConfig.nav.map((item) => (
                 <li key={item.href}>
-                  <Link href={item.href} className="flex items-center gap-1.5 text-slate-700 hover:text-primary-400 text-sm transition-colors group">
+                  <Link rel="canonical" href={item.href} className="flex items-center gap-1.5 text-slate-700 hover:text-primary-400 text-sm transition-colors group">
                     <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-150" />
                     {item.label}
                   </Link>
@@ -94,7 +94,7 @@ export default function Footer() {
             <ul className="space-y-2.5">
               {services.map((s) => (
                 <li key={s.href}>
-                  <Link href={s.href} className="flex items-center gap-1.5 text-slate-700 hover:text-primary-400 text-sm transition-colors group">
+                  <Link rel="canonical" href={s.href} className="flex items-center gap-1.5 text-slate-700 hover:text-primary-400 text-sm transition-colors group">
                     <ArrowRight className="w-3 h-3 opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-150" />
                     {s.label}
                   </Link>
@@ -134,7 +134,7 @@ export default function Footer() {
             </ul>
 
             {/* Book CTA */}
-            <Link
+            <Link rel="canonical"
               href="/assessment"
               className="inline-flex items-center gap-2 w-full justify-center px-5 py-3 bg-primary-800 hover:bg-primary-500 text-white text-sm font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-primary-900/30"
             >
@@ -148,13 +148,13 @@ export default function Footer() {
             &copy; {new Date().getFullYear()} TimeWell Care Services Ltd. All Rights Reserved.
           </p>
           <div className="flex items-center gap-5">
-            <Link href="/contact#complaints" className="text-slate-500 hover:text-slate-300 text-xs transition-colors">
+            <Link rel="canonical" href="/contact#complaints" className="text-slate-500 hover:text-slate-300 text-xs transition-colors">
               Complaints Policy
             </Link>
-            <Link href="/privacy" className="text-slate-500 hover:text-slate-300 text-xs transition-colors">
+            <Link rel="canonical" href="/privacy" className="text-slate-500 hover:text-slate-300 text-xs transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/cookies" className="text-slate-500 hover:text-slate-300 text-xs transition-colors">
+            <Link rel="canonical" href="/cookies" className="text-slate-500 hover:text-slate-300 text-xs transition-colors">
               Cookie Policy
             </Link>
           </div>

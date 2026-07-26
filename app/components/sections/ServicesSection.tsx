@@ -151,7 +151,7 @@ function ServiceCard({
         </ul>
 
         {/* CTA link */}
-        <Link
+        <Link rel="canonical"
           href={href}
           className="inline-flex items-center gap-2 text-sm font-semibold text-white group/link"
         >
@@ -230,7 +230,7 @@ export default function ServicesSection() {
           <p className="text-slate-400 text-sm">
             Not sure which service is right for your loved one?
           </p>
-          <Link
+          <Link rel="canonical"
             href="/assessment"
             className="inline-flex items-center gap-2 px-6 py-2.5 bg-primary-500 hover:bg-primary-400 text-white text-sm font-semibold rounded-xl transition-all duration-200 hover:-translate-y-0.5 whitespace-nowrap"
           >

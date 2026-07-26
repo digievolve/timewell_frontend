@@ -27,7 +27,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed  inset-x-0  top-0 z-50 transition-all duration-300 ${
+      className={`fixed  inset-x-0 h-23 my-3 md:h-auto md:my-auto top-0 z-50 transition-all duration-300 ${
         transparent
           ? "bg-white"
           : "bg-white/95 backdrop-blur-md shadow-[0_2px_20px_rgba(56,170,221,0.1)]"
@@ -37,20 +37,20 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-30">
 
           {/* Logo — white version on transparent bg */}
-          <Link href="/" className="flex items-center gap-2">
+          <Link rel="canonical" href="/" className="flex items-center gap-2">
             <img
               src={siteConfig.logo}
               alt="TimeWell Care Services"
               width={9000}
               height={9000}
-              className={`w-70 transition-all duration-300`}
+              className={` w-60 md:w-70 transition-all duration-300`}
             />
           </Link>
 
           {/* Desktop nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {siteConfig.nav.map((item) => (
-              <Link
+              <Link rel="canonical"
                 key={item.href}
                 href={item.href}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
@@ -75,7 +75,7 @@ export default function Header() {
               <Phone className="w-4 h-4" />
               <span className="font-medium">{siteConfig.contact.phone}</span>
             </a>
-            <Link
+            <Link rel="canonical"
               href="/assessment"
               className="px-5 py-2.5 bg-primary-500 hover:bg-primary-600 text-white text-sm font-semibold rounded-xl transition-all duration-200 shadow-blue hover:shadow-lg hover:-translate-y-0.5"
             >
@@ -86,7 +86,7 @@ export default function Header() {
           {/* Mobile burger */}
           <button
             onClick={() => setOpen(!open)}
-            className={`lg:hidden w-10 h-10 flex items-center justify-center rounded-xl transition-color text-slate-700 hover:bg-slate-100 `}
+            className={`lg:hidden w-10 h-10 mr-2 flex items-center justify-center rounded-xl transition-color text-slate-700 hover:bg-slate-100 `}
             aria-label={open ? "Close menu" : "Open menu"}
           >
             {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -102,7 +102,7 @@ export default function Header() {
       >
         <div className="bg-white border-t border-slate-100 px-4 py-4 space-y-1">
           {siteConfig.nav.map((item) => (
-            <Link
+            <Link rel="canonical"
               key={item.href}
               href={item.href}
               className={`block px-4 py-3 rounded-xl text-sm font-medium transition-colors ${
@@ -122,7 +122,7 @@ export default function Header() {
               <Phone className="w-4 h-4 text-primary-500" />
               {siteConfig.contact.phone}
             </a>
-            <Link
+            <Link rel="canonical"
               href="/assessment"
               className="block text-center px-5 py-3 bg-primary-500 hover:bg-primary-600 text-white text-sm font-semibold rounded-xl transition-colors"
             >

@@ -154,13 +154,13 @@ export default function HeroCarousel() {
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-3">
-                <Link
+                <Link rel="canonical"
                   href={slide.cta1.href}
                   className="inline-flex items-center gap-2 px-7 py-3.5 bg-primary-500 hover:bg-primary-400 text-white font-semibold rounded-xl transition-all duration-200 shadow-lg hover:shadow-primary-500/40 hover:-translate-y-0.5 text-sm"
                 >
                   {slide.cta1.label} <ArrowRight className="w-4 h-4" />
                 </Link>
-                <Link
+                <Link rel="canonical"
                   href={slide.cta2.href}
                   className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/40 text-white hover:bg-white/10 font-semibold rounded-xl transition-all duration-200 text-sm"
                 >
