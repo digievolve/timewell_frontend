@@ -14,6 +14,7 @@ const values = [
   { Icon: Award,     title: "Excellence",  color: "#bc00eb", description: "We continuously strive to improve the quality and standards of our care services." },
   { Icon: Check,     title: "Commitment",  color: "#8ef00f", description: "We are dedicated to making a positive difference in the lives of those we support." },
   { Icon: Lightbulb, title: "Innovation",  color: "#d82e04", description: "We embrace best practices and new approaches to enhance the care we deliver." },
+  { Icon: Sparkles,  title: "Empowerment", color: "#f4b400", description: "We enable people to live as independently as possible by promoting choice, confidence, and dignity. By focusing on each person's strengths and aspirations, we help them live fulfilling lives with greater independence and inclusion." },
 ];
 
 const commitments = [
@@ -396,7 +397,7 @@ export default function AboutPage() {
 
        {/* ── Empowerment Section ────────────────────────────────────────── */}
 {/* ── Empowerment Section ────────────────────────────────────────── */}
-<div className="mt-20 max-w-4xl mx-auto px-4 sm:px-0">
+<div className="mt-20 hidden max-w-4xl mx-auto px-4 sm:px-0">
   <AnimateIn direction="up" delay={100}>
     <div className="relative bg-white/5 rounded-3xl p-6 sm:p-10 md:p-12 border border-white/10 shadow-xl shadow-primary-900/10">
       {/* Decorative elements */}
