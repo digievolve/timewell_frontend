@@ -87,6 +87,9 @@ export const metadata: Metadata = {
   },
   verification: {
     google: process.env.GOOGLE_SITE_VERIFICATION || "",
+    other: {
+      msvalidate: "A037658AAB52447DF332469830B2A5F3", 
+    }
   },
   category: "Health & Social Care",
 };
@@ -164,6 +167,7 @@ export default function RootLayout({
 
         {/* Additional meta tags */}
         <meta name="format-detection" content="telephone=no" />
+        <meta name="msvalidate.01" content="A037658AAB52447DF332469830B2A5F3" />
         <meta name="geo.region" content="GB-LND" />
         <meta name="geo.placename" content="London" />
         <link rel="icon" href="/favicon.ico" sizes="any" />
