@@ -8,13 +8,13 @@ import AnimateIn from "../components/ui/AnimateIn";
 export const metadata: Metadata = { title: "About Us" };
 
 const values = [
-  { Icon: Heart,     title: "Compassion",  color: "#E76F51", description: "We treat every individual with kindness, empathy, and understanding." },
-  { Icon: Users,     title: "Respect",     color: "#55ec0e", description: "We honor the dignity, independence, and choices of every person we support." },
-  { Icon: Shield,    title: "Integrity",   color: "#1bb4cf", description: "We deliver care with honesty, transparency, and accountability." },
-  { Icon: Award,     title: "Excellence",  color: "#bc00eb", description: "We continuously strive to improve the quality and standards of our care services." },
-  { Icon: Check,     title: "Commitment",  color: "#8ef00f", description: "We are dedicated to making a positive difference in the lives of those we support." },
-  { Icon: Lightbulb, title: "Innovation",  color: "#d82e04", description: "We embrace best practices and new approaches to enhance the care we deliver." },
-  { Icon: Sparkles,  title: "Empowerment", color: "#f4b400", description: "We enable people to live as independently as possible by promoting choice, confidence, and dignity. By focusing on each person's strengths and aspirations, we help them live fulfilling lives with greater independence and inclusion." },
+  { Icon: Heart, title: "Compassion", color: "#E76F51", description: "We treat every individual with kindness, empathy, and understanding." },
+  { Icon: Users, title: "Respect", color: "#55ec0e", description: "We honor the dignity, independence, and choices of every person we support." },
+  { Icon: Shield, title: "Integrity", color: "#1bb4cf", description: "We deliver care with honesty, transparency, and accountability." },
+  { Icon: Award, title: "Excellence", color: "#bc00eb", description: "We continuously strive to improve the quality and standards of our care services." },
+  { Icon: Check, title: "Commitment", color: "#8ef00f", description: "We are dedicated to making a positive difference in the lives of those we support." },
+  { Icon: Lightbulb, title: "Innovation", color: "#d82e04", description: "We embrace best practices and new approaches to enhance the care we deliver." },
+  { Icon: Sparkles, title: "Empowerment", color: "#f4b400", description: "We enable people to live as independently as possible by promoting choice, confidence, and dignity. By focusing on each person's strengths and aspirations, we help them live fulfilling lives with greater independence and inclusion." },
 ];
 
 const commitments = [
@@ -33,7 +33,7 @@ const leadership = [
     bio: "Maureen oversees the strategic and operational direction of the organisation, ensuring that every service delivered reflects the highest standards of care and professional excellence.",
     initials: "ME",
     accentFrom: "from-secondary-600",
-    accentTo:   "to-secondary-800",
+    accentTo: "to-secondary-800",
   },
   {
     name: "Stella C. Ngozi Ede",
@@ -42,9 +42,9 @@ const leadership = [
     bio: "Stella brings extensive experience in health and social care leadership. Her vision and drive for compassionate, person-centred care are the foundation on which TimeWell Care Services was built.",
     initials: "SN",
     accentFrom: "from-primary-600",
-    accentTo:   "to-primary-800",
+    accentTo: "to-primary-800",
   },
-  
+
 ];
 
 export default function AboutPage() {
@@ -360,71 +360,41 @@ export default function AboutPage() {
             </div>
           </AnimateIn>
 
-      
-           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-          {values.map(({ Icon, title, description, color }) => (
-            <div
-              key={title}
-              className="relative pt-8 group"
-            >
-              {/* Floating Icon */}
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {values.map(({ Icon, title, description, color }, index) => (
               <div
-                className="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
-                style={{ backgroundColor: color }}
+                key={title}
+                className={`relative pt-8 group ${index === values.length - 1 ? "lg:col-start-2" : ""
+                  }`}
               >
-                <Icon
-                  className="w-7 h-7 text-white"
-                  strokeWidth={2}
-                />
-              </div>
-
-              {/* Card */}
-              <div className="bg-white rounded-[28px] px-8 pt-14 pb-8 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
-                <h3
-                  className="text-3xl font-bold mb-4"
-                  style={{ color }}
+                {/* Floating Icon */}
+                <div
+                  className="absolute left-1/2 -translate-x-1/2 top-0 z-10 w-16 h-16 rounded-full flex items-center justify-center shadow-lg"
+                  style={{ backgroundColor: color }}
                 >
-                  {title}
-                </h3>
+                  <Icon
+                    className="w-7 h-7 text-white"
+                    strokeWidth={2}
+                  />
+                </div>
 
-                <p className="text-gray-500 leading-relaxed mb-8">
-                  {description}
-                </p>
+                {/* Card */}
+                <div className="bg-white rounded-[28px] px-8 pt-14 pb-8 text-center shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-2 h-full">
+                  <h3
+                    className="text-3xl font-bold mb-4"
+                    style={{ color }}
+                  >
+                    {title}
+                  </h3>
+
+                  <p className="text-gray-500 leading-relaxed mb-8">
+                    {description}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-
-       {/* ── Empowerment Section ────────────────────────────────────────── */}
-{/* ── Empowerment Section ────────────────────────────────────────── */}
-<div className="mt-20 hidden max-w-4xl mx-auto px-4 sm:px-0">
-  <AnimateIn direction="up" delay={100}>
-    <div className="relative bg-white/5 rounded-3xl p-6 sm:p-10 md:p-12 border border-white/10 shadow-xl shadow-primary-900/10">
-      {/* Decorative elements */}
-      <div className="absolute -top-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
-      <div className="absolute -bottom-px left-8 right-8 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      
-      <div className="relative flex flex-col sm:flex-row items-start gap-5 sm:gap-6">
-        {/* Quotation mark as visual element instead of icon */}
-        <div className="shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-primary-500/10 to-secondary-500/10 border border-white/5 flex items-center justify-center flex-shrink-0">
-          <svg className="w-5 h-5 sm:w-6 sm:h-6 text-primary-300/70" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z" />
-          </svg>
-        </div>
-        
-        <div className="flex-1 min-w-0">
-          <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-white mb-2 sm:mb-3 tracking-tight">
-            Empowerment
-          </h3>
-          <p className="text-white/70 leading-relaxed text-sm sm:text-base">
-            At TimeWell Care Services, we enable people to live as independently as possible by promoting choice, confidence, and dignity. By focusing on each person's strengths and aspirations, we help them live fulfilling lives with greater independence and inclusion.
-          </p>
-        </div>
-      </div>
-    </div>
-  </AnimateIn>
-</div>
-
+            ))}
+          </div>
         </div>
       </section>
 
